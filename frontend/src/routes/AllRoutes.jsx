@@ -8,12 +8,18 @@ import { RolesDirectory } from '../pages/resource/RolesDirectory'
 import { Dashboard } from '../pages/Dashboard'
 import { Login } from '../pages/auth/login'
 import { Signup } from '../pages/auth/signup'
+import { Community } from '../components/home/community'
+import { Interview } from '../components/home/interview'
+import { Screen } from '../pages/product/Screen'
 
 export const AllRoutes = () => {
   return (
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<HomePage />}/>
+            <Route path='#community' element={<Community />} />
+            <Route parh="#screen" element={<Screen />} />
+            <Route path="#interview" element={<Interview />} />
             <Route path='/auth/signup' element={<Signup />}/>
             <Route path='/auth/login' element={<Login />}/>
             <Route path='/features/real-world-questions' element={<RealWorldQuestions />} />
@@ -21,6 +27,7 @@ export const AllRoutes = () => {
             <Route path='/privacy' element={<PrivacyPolicy />} />
             <Route path='/roles-directory' element={<RolesDirectory />} />
             <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/screen' element={<Screen />} />
         </Routes>
     </BrowserRouter>
   )

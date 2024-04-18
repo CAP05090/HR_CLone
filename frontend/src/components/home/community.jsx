@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 export const Community = () => {
   return (
-    <div>
+    <div id='community'>
       <div>
         <h3>Coding practice</h3>
       </div>

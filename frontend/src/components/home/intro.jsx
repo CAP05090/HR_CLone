@@ -18,14 +18,14 @@ export const Intro = () => {
       <p><b>It’s not a pipeline problem.</b></p>
       <p><b>It’s a spotlight problem.</b></p>
       <p>Tech hiring needs a reset. From prepping for jobs and practicing coding to running a world-class technical interview, give developers the tools they need to showcase their skills, passion, and potential.</p>
-      <div>
-        <Link to="#community">Prep</Link>
-        <Link to="#screen">Screen</Link>
-        <Link to="#interview">Interview</Link>
-      </div>
+      <ul>
+        <li><a href='#community'>Prep</a></li>
+        <li><a href='#screen'>Screen</a></li>
+        <li><a href='#interview'>Interview</a></li>
+      </ul>
       <Community />
       <Screen />
-      <Interview/>
+      <Interview />
     </div>
     </>
   )
