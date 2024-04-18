@@ -4,30 +4,28 @@ import style from "./footer.module.css"
 
 export const Footer = () => {
   let productLink = [
-    {to:"products/screen", displaytext:"Screen"},
-    {to:"real-world-questions", displaytext:"Real World Questions"}
+    {to:"/products/screen", displaytext:"Screen"},
+    {to:"/real-world-questions", displaytext:"Real World Questions"}
   ]
   let solutionLink = [
-    {to:"solutions/skill-strategy", displaytext:"Set Up a Skills Strategy"},
-    {to:"solutions/talent-brand", displaytext:"Showcase Your Talent Brand"},
-    {to:"solutions/internal-talent", displaytext:"Mobilize Your Internal Talent"},
-    {to:"solutions/embrace-ai", displaytext:"Embrace AI"}
+    {to:"/solutions/skill-strategy", displaytext:"Set Up a Skills Strategy"},
+    {to:"/solutions/talent-brand", displaytext:"Showcase Your Talent Brand"},
+    {to:"/solutions/internal-talent", displaytext:"Mobilize Your Internal Talent"}
   ]
   let resourcesLink = [
-    {to:"roles-directory", displaytext:"Roles Directory"},
-    {to:"partners", displaytext:"Partners"},
-    {to:"integrations", displaytext:"Integrations"},
-    {to:"what's-news", displaytext:"What's New"}
+    {to:"/roles-directory", displaytext:"Roles Directory"},
+    {to:"/integrations", displaytext:"Integrations"},
+    {to:"/what's-news", displaytext:"What's New"}
   ]
   let aboutLink = [
-    {to:"carrier", displaytext:"Careers"},
-    {to:"newsrooms", displaytext:"Newsroom"},
-    {to:"status", displaytext:"Status"},
-    {to:"trust", displaytext:"Trust"}
+    {to:"/carrier", displaytext:"Careers"},
+    {to:"/newsrooms", displaytext:"Newsroom"},
+    {to:"/status", displaytext:"Status"},
+    {to:"/trust", displaytext:"Trust"}
   ]
   let getStartedLink = [
-    {to:"contact-us", displaytext:"Contact Us"},
-    {to:"developers", displaytext:"For Developers"}
+    {to:"/contact-us", displaytext:"Contact Us"},
+    {to:"/developers", displaytext:"For Developers"}
   ]
   return (
     <>

@@ -4,24 +4,24 @@ import style from "./navbar.module.css"
 
 export const Navbar = () => {
   let productLink = [
-    {to:"screen", displaytext:"Screen"},
-    {to:"features/real-world-questions", displaytext:"Real World Questions"}
+    {to:"/screen", displaytext:"Screen"},
+    {to:"/features/real-world-questions", displaytext:"Real World Questions"}
   ]
   let solutionLink = [
-    {to:"skill-strategy", displaytext:"Set Up a Skills Strategy"},
-    {to:"talent-brand", displaytext:"Showcase Your Talent Brand"},
-    {to:"embrace-ai", displaytext:"Embrace AI"}
+    {to:"/skill-strategy", displaytext:"Set Up a Skills Strategy"},
+    {to:"/talent-brand", displaytext:"Showcase Your Talent Brand"},
+    {to:"/embrace-ai", displaytext:"Embrace AI"}
   ]
   let resourcesLink = [
-    {to:"roles-directory", displaytext:"Roles Directory"},
-    {to:"integrations", displaytext:"Integrations"},
-    {to:"what's-news", displaytext:"What's New"}
+    {to:"/roles-directory", displaytext:"Roles Directory"},
+    {to:"/integrations", displaytext:"Integrations"},
+    {to:"/what's-news", displaytext:"What's New"}
   ]
   return (
     <>
     <div className={style.header}>
-      <Link to="contact-us">Contact Us</Link>
-      <Link to="auth/login">Login</Link>
+      <Link to="/contact-us">Contact Us</Link>
+      <Link to="/auth/login">Login</Link>
     </div>
     <div className={style.nav}>
       <div className={style.navbar}>
@@ -45,8 +45,8 @@ export const Navbar = () => {
         </div>
       </div>
       <div style={{display:"flex"}}>
-        <Link to="dashboard">For Developer</Link>
-        <Link to="auth/signup">Sign up</Link>
+        <Link to="/dashboard">For Developer</Link>
+        <Link to="/auth/signup">Sign up</Link>
       </div>
     </div>
     </>
