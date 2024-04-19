@@ -20,33 +20,42 @@ export const Navbar = () => {
   return (
     <>
     <div className={style.header}>
-      <Link to="/contact-us">Contact Us</Link>
-      <Link to="/auth/login">Login</Link>
+      <Link className={style.link} to="/contact-us">Contact Us</Link>
+      <Link className={style.link} to="/auth/login">Login</Link>
     </div>
-    <div className={style.nav}>
-      <div className={style.navbar}>
-        <div>
-          <Link to="">PRODUCTS</Link>
-          {productLink.map((link, id)=>(
-            <Link key={id} to={link.to} className={style.container}>{link.displaytext}</Link>
-          ))}
+    <div className={style.navbar}>
+      <div>
+        <Link to="/"><img className={style.logo} src='https://www.hackerrank.com/wp-content/uploads/2018/08/hackerrank_logo.png' alt='logo' /></Link>
+      </div>
+      <div>
+        <div className={style.dropdown}>
+          <p className={style.dropbtn}>PRODUCTS</p>
+          <div className={style.dropdown_content}>
+            {productLink.map((link, id)=>(
+              <Link key={id} to={link.to} className={style.lnk}>{link.displaytext}</Link>
+            ))}
+          </div>
         </div>
-        <div>
-          <Link to="">SOLUTIONS</Link>
-          {solutionLink.map((link, id)=>(
-            <Link key={id} to={link.to} className={style.container}>{link.displaytext}</Link>
-          ))}
+        <div className={style.dropdown}>
+          <p className={style.dropbtn}>SOLUTIONS</p>
+          <div className={style.dropdown_content}>
+            {solutionLink.map((link, id)=>(
+              <Link key={id} to={link.to} className={style.lnk}>{link.displaytext}</Link>
+            ))}
+          </div>
         </div>
-        <div>
-          <Link to="">RESUORCES</Link>
-          {resourcesLink.map((link, id)=>(
-            <Link key={id} to={link.to} className={style.container}>{link.displaytext}</Link>
-          ))}
+        <div className={style.dropdown}>
+          <p className={style.dropbtn}>RESUORCES</p>
+          <div className={style.dropdown_content}>
+            {resourcesLink.map((link, id)=>(
+              <Link key={id} to={link.to} className={style.lnk}>{link.displaytext}</Link>
+            ))}
+          </div>
         </div>
       </div>
-      <div style={{display:"flex"}}>
-        <Link to="/dashboard">For Developer</Link>
-        <Link to="/auth/signup">Sign up</Link>
+      <div>
+        <Link to="/dashboard" className={style.userlink}>For Developer</Link>
+        <Link to="/auth/signup" className={style.userlink}>Sign up</Link>
       </div>
     </div>
     </>

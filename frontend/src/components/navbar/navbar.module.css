@@ -1,9 +1,60 @@
-.nav {
-    display: flex;
+.header{
+    border:0px solid red;
+    width: 100%;
+    display: fles;
+    text-align: end;
+    padding:5px;
+    margin:auto;
+    background-color: rgb(17, 17, 17);
 }
-.navbar{
+.link {
+    color: white;
+    margin: 5px 15px;
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+.navbar {
+    border: 1px solid red;
     display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
 }
-.container {
-    display: flex;
+.dropbtn {
+    padding:5px auto;
+    font-size: 16px;
+    border: none;
+}
+.dropdown {
+    margin: auto 10px;
+    position: relative;
+    display: inline-block;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: #e4e1e1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(252, 251, 251, 0.2);
+    z-index: 1;
+}
+.lnk {
+    color: black;
+    margin: 10px;
+    text-decoration: none;
+    display: block;
+}
+.lnk:hover {background-color: #ddd;}
+.dropdown:hover .dropdown_content {display: block;}
+.dropdown:hover .dropbtn {color: #3e8e41;}
+.logo{
+    width: 200px;
+    height: 30px;
+}
+.userlink{
+    font-size: 18px;
+    position: relative;
+    text-decoration: none;
+    padding: 10px auto;
+    margin: 15px;
 }
