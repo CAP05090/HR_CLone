@@ -1,0 +1,42 @@
+.login{
+    background-color: rgb(228, 248, 241);
+    width:50%;
+    margin: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.logo{
+    width:300px;
+    height:100px;
+    display: block;
+    margin: auto;
+}
+.tag{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 650;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+}
+.inp{
+    display: flex;
+    margin: 10px;
+}
+.inp>input{
+    border: 1px solid dimgray;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+.forget{
+    display: flex;
+    justify-content: space-between;
+    margin: auto 20px;
+}
+
+@media screen and (max-width:700px) {
+    .login{
+        width: 95%;
+    }
+}

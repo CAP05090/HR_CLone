@@ -1,9 +1,15 @@
 .intro{
     margin: 20px;
 }
-.tag, p{
-    margin: 20px;
+.intro>h1{
     text-align: center;
+    font-size: 48px;
+    font-weight: 650;
+}
+.intro>p, p{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
 }
 .auth{
     width: fit-content;

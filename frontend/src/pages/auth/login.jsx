@@ -1,34 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import style from "./login.module.css"
 
 export const Login = () => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [token, setToken] = useState("")
+  const userData = {email, password}
+
+  const handleLogin = async()=>{
+    try {
+      let res = await axios.post("", userData)
+      if (res.data.token){
+        setLogin(true)
+        setToken(token)
+      }
+      console.log(res.data)
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
   return (
-    <>
-    <div>
-      <img src='https://hrcdn.net/fcore/assets/brand/hr-logo-new-black-green-2f615594d2.svg' alt='logo' />
-      <h1>For Developers</h1>
-      <p>Practice coding, prepare for interviews, and get hired.</p>
-    </div>
-    <div>
+    <div className={style.login}>
       <div>
-        <img src='' alt='email' />
-        <input placeholder='Email' />
+        <img className={style.logo} src='https://hrcdn.net/fcore/assets/brand/hr-logo-new-black-green-2f615594d2.svg' alt='logo' />
+        <h1 className={style.tag}>For Developers</h1>
+        <p>Practice coding, prepare for interviews, and get hired.</p>
       </div>
       <div>
-        <img src='' alt='password' />
-        <input placeholder='Password' />
+        <div className={style.inp}>
+          <img className={style.icon} src='https://th.bing.com/th?id=OIP.AmxxNcB-gpi9YR96B0kBKwHaHa&w=249&h=249&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2' alt='email' />
+          <input type='email' placeholder='Email' value={email} onChange={(e)=> setEmail(e.target.value)} />
+        </div>
+        <div className={style.inp}>
+          <img className={style.icon} src='https://th.bing.com/th/id/OIP.Vi7W4hshCgpJepm-5Dz1aQHaHa?w=155&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7' alt='password' />
+          <input type='password' value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='Password' />
+        </div>
+        <div className={style.forget}>
+          <div style={{display:"flex"}}><input type='checkBox' /><p>Remember me</p></div>
+          <Link to="">Forgot your password?</Link>
+        </div>
+        <button onClick={handleLogin}>Login</button>
+        {
+          token && <h1>Token: {token}</h1>
+        }
       </div>
-      <div style={{display:"flex"}}>
-        <input type='checkBox' />
-        <p>Remember me</p>
-        <Link to="">Forgot your password?</Link>
+      <div>
+        <p>Don't have an account, Register <Link to="/auth/signup">Sign Up</Link> </p>
+        
       </div>
-      <input type='submit' value="Login" />
-    </div>
-    <div>
-      <p>Don't have an account, Register <Link to="/auth/signup">Sign Up</Link> </p>
-      
-    </div>
       <div style={{display:"column"}}>
         <p>or connect with</p>
         <hr/>
@@ -39,6 +60,6 @@ export const Login = () => {
         <Link to="/linkedin"><img src='https://hrcdn.net/fcore/assets/linkedin-colored-1db195795c.svg' alt='' /></Link>
         <Link to="/git"><img src='https://hrcdn.net/fcore/assets/github-colored-1db995054b.svg' alt='' /></Link>
       </div>
-    </>
+    </div>
   )
 }

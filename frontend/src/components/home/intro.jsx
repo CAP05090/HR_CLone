@@ -9,7 +9,7 @@ export const Intro = () => {
   
   return (
     <div className={style.intro}>
-      <h1 className={style.tag}>Skills speak louder than words</h1>
+      <h1 >Skills speak louder than words</h1>
       <p>We help companies develop the strongest tech teams around. We help candidates sharpen their tech skills and pursue job opportunities.</p>
       <div className={style.auth}>
         <Link to="/auth/signup" className={style.signup}>Sign up</Link>
