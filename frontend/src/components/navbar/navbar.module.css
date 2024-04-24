@@ -1,28 +1,29 @@
-.header{
-    border:0px solid red;
-    width: 100%;
-    display: fles;
-    text-align: end;
-    padding:5px;
-    margin:auto;
-    background-color: rgb(17, 17, 17);
-}
 .link {
-    color: white;
     margin: 5px 15px;
     text-decoration: none;
     font-size: 15px;
-  }
-
-.navbar {
-    border: 1px solid red;
+}
+.navbar{
+    position: relative;
+    border-radius: 10px;
+    background-color: rgb(214, 251, 239);
+    border: 0px solid red;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding: 5px;
 }
+.menu {
+    display: flex;
+}
+.menuItem {
+    display: flex;
+}
+.menubtn {
+    display: none;
+}
 .dropbtn {
-    padding:5px auto;
-    font-size: 16px;
+    padding: 5px auto;
+    font-size: 18px;
     border: none;
 }
 .dropdown {
@@ -44,17 +45,69 @@
     text-decoration: none;
     display: block;
 }
-.lnk:hover {background-color: #ddd;}
-.dropdown:hover .dropdown_content {display: block;}
-.dropdown:hover .dropbtn {color: #3e8e41;}
-.logo{
+.lnk:hover {
+    background-color: #ddd;
+}
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    color: #3e8e41;
+}
+.logo {
     width: 200px;
     height: 30px;
 }
-.userlink{
+.usercontent {
+    display: flex;
+    justify-content: space-between;
+}
+.userlink {
+    font-weight: 700;
+    color: black;
     font-size: 18px;
     position: relative;
     text-decoration: none;
-    padding: 10px auto;
-    margin: 15px;
+    padding: 1px auto;
+    margin: auto 10px;
+}
+@media screen and (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .usercontent {
+        border: 1px solid red;
+        display: grid;
+        text-align: center;
+        margin: auto;
+    }
+    .userlink {
+        border: 1px solid green;
+    }
+    .menu {
+        position: fixed;
+        right: 0;
+        margin-right: 10%;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 11px;
+        z-index: 3;
+    }
+    .menubtn {
+        width: 20px;
+        height: 20px;
+        display: block;
+        cursor: pointer;
+    }
+    .menuItem {
+        margin: 45px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+        border-radius: 10px;
+        background: rgb(232, 234, 236);
+        padding: 24px 33px;
+    }
 }

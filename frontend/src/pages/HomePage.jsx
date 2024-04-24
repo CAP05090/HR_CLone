@@ -6,11 +6,11 @@ import { About } from '../components/home/About.jsx'
 
 export const HomePage = () => {
   return (
-    <>
-    <Navbar />
-    <Intro />
-    <About />
-    <Footer />
-    </>
+    <div style={{width:"99%", margin:"auto"}}>
+      <Navbar />
+      <Intro />
+      <About />
+      <Footer />
+    </div>
   )
 }

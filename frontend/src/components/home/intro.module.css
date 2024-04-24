@@ -1,0 +1,33 @@
+h1, p{
+    margin: 20px;
+    text-align: center;
+}
+.auth{
+    width: fit-content;
+    margin: auto;
+}
+.signup{
+    text-decoration: none;
+    padding: 10px 100px;
+    font-size: 24px;
+    font-weight: 600;
+    background-color: rgb(184, 248, 213);
+    color: rgb(252, 11, 11);
+}
+.links{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width: 99%;
+    text-align: center;
+}
+.link{
+    width: fit-content;
+    text-decoration: none;
+    padding: 20px 30px;
+    margin: 10px;
+    font-size: 20px;
+    color: rgb(64, 63, 63);
+    font-weight: 650;
+}

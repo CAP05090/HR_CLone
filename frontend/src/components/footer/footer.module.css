@@ -1,8 +1,26 @@
 .footer {
     display:flex;
-    
+    justify-content: space-around;
+    margin: auto 25px;
 }
-.containerItem{
+.container>p{
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+}
+.link{
+    border: 0px solid red;
     display: flex;
-    margin:10px;
+    width: fit-content;
+    padding: 5px;
+    text-decoration: none;
+    color: dimgray
+}
+
+@media screen and (max-width: 700px) {
+    .footer{
+        display: grid;
+       justify-content: space-between;
+       margin:auto 10px;
+    }
 }

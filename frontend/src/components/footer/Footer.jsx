@@ -4,8 +4,8 @@ import style from "./footer.module.css"
 
 export const Footer = () => {
   let productLink = [
-    {to:"/products/screen", displaytext:"Screen"},
-    {to:"/real-world-questions", displaytext:"Real World Questions"}
+    {to:"screen", displaytext:"Screen"},
+    {to:"/features/real-world-questions", displaytext:"Real World Questions"}
   ]
   let solutionLink = [
     {to:"/solutions/skill-strategy", displaytext:"Set Up a Skills Strategy"},
@@ -25,39 +25,39 @@ export const Footer = () => {
   ]
   let getStartedLink = [
     {to:"/contact-us", displaytext:"Contact Us"},
-    {to:"/developers", displaytext:"For Developers"}
+    {to:"/dashboard", displaytext:"For Developers"}
   ]
   return (
     <>
     <div className={style.footer}>
       <div className={style.container}>
-         <Link to="">PRODUCTS</Link>
+         <p className=''>PRODUCTS</p>
         {productLink.map((link, id)=>(
-          <Link key={id} to={link.to} className={style.containerItem}>{link.displaytext}</Link>
+          <Link key={id} to={link.to} className={style.link}>{link.displaytext}</Link>
         ))}
       </div>
       <div className={style.container}>
-        <Link to="">SOLUTIONS</Link>
+        <p>SOLUTIONS</p>
         {solutionLink.map((link, id)=>(
-          <Link key={id} to={link.to} className={style.containerItem}>{link.displaytext}</Link>
+          <Link key={id} to={link.to} className={style.link}>{link.displaytext}</Link>
         ))}
       </div>
       <div className={style.container}>
-        <Link to="">RESUORCES</Link>
+        <p>RESOURCES</p>
         {resourcesLink.map((link, id)=>(
-          <Link key={id} to={link.to} className={style.containerItem}>{link.displaytext}</Link>
+          <Link key={id} to={link.to} className={style.link}>{link.displaytext}</Link>
         ))}
       </div>
       <div className={style.container}>
-        <Link to="">ABOUT US</Link>
+        <p>ABOUT US</p>
         {aboutLink.map((link, id)=>(
-          <Link key={id} to={link.to} className={style.containerItem}>{link.displaytext}</Link>
+          <Link key={id} to={link.to} className={style.link}>{link.displaytext}</Link>
         ))}
       </div>
       <div className={style.container}>
-        <Link to="">GET STARTED</Link>
+        <p>GET STARTED</p>
         {getStartedLink.map((link, id)=>(
-          <Link key={id} to={link.to} className={style.containerItem}>{link.displaytext}</Link>
+          <Link key={id} to={link.to} className={style.link}>{link.displaytext}</Link>
         ))}
       </div>
     </div>
