@@ -1,4 +1,7 @@
-h1, p{
+.intro{
+    margin: 20px;
+}
+.tag, p{
     margin: 20px;
     text-align: center;
 }

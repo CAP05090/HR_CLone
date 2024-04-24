@@ -1,5 +1,24 @@
 .community{
-    background-color: black;
+    display: flex;
+}
+.container{
+    background-color: rgb(49, 48, 48);
     color: white;
     padding: 20px;
+}
+.auth{
+    border: 1px solid #ffff;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: medium;
+    font-weight: 600;
+}
+.tag{
+    text-align: left;
+}
+@media screen and (max-width:700px){
+    .community{
+        display: grid;
+    }
 }

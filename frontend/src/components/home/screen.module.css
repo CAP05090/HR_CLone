@@ -1,0 +1,21 @@
+
+.skillScreen{
+    display: flex;
+    border: 0px solid green;
+}
+.skillScreen>div{
+    border: 0px solid red;
+    margin: 5px
+}
+.text{
+    text-align: left;
+}
+.heading{
+    margin:auto 20px;
+}
+
+@media screen and (max-width: 700px){
+    .skillScreen{
+        display: grid;
+    }
+}
