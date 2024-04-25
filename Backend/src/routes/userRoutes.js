@@ -1,8 +1,8 @@
 const dotenv = require("dotenv").config()
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
-const { UserModel } = require("../models/UserModel")
 const { BlackListModel } = require("../models/BlackListModel")
+const { UserModel } = require("../models/userModel")
 
 const userRouter = require("express").Router()
 
@@ -71,7 +71,7 @@ const userRouter = require("express").Router()
  */
 
 userRouter.post("/register", async(req, res)=>{
-    const { full_name, email, password } = req.body
+    const {name, email, password, education, stream} = req.body
     try {
         let Email = await UserModel.findOne({email})
         if(Email ){
@@ -82,7 +82,7 @@ userRouter.post("/register", async(req, res)=>{
                     if(err){
                         res.status(400).send("Error During Hashing Password")
                     } else{
-                        let user = new UserModel({full_name, password: hash, email})
+                        let user = new UserModel({name, password: hash, email, education, stream})
                         await user.save()
                         res.status(200).send("User Registered Successfully")
                     }
