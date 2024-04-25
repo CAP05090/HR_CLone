@@ -1,19 +1,28 @@
-import React, { useState } from 'react'
-import { useDispatch } from "react-redux"
+import React, { useContext, useState } from 'react'
+import axios from "axios"
 import { Link } from 'react-router-dom'
 import style from "./login.module.css"
-import { loginDetails } from '../../redux/appReducers/action'
+import { AuthContext } from '../../Context/authContext'
 
 export const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [token, setToken] = useState("")
-  const dispatch = useDispatch()
+  const {setLogin} = useContext(AuthContext)
   const userData = {email, password}
 
   const handleLogin = async(e)=>{
-   e.preventDefault();
-   dispatch(loginDetails(email, password))
+    e.preventDefault();
+    try {
+      let res = await axios.post("http://localhost:8080/users/login", userData)
+      if (res.data.token){
+        setLogin(true)
+        setToken(token)
+      }
+      console.log(res.data)
+    } catch (error) {
+      console.log(error.message)
+    }
   }
   return (
     <div className={style.login}>
@@ -29,7 +38,7 @@ export const Login = () => {
         </div>
         <div className={style.inp}>
           <img className={style.icon} src='https://th.bing.com/th/id/OIP.Vi7W4hshCgpJepm-5Dz1aQHaHa?w=155&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7' alt='password' />
-          <input type='password' value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='Password' />
+          <input type='password' value={password} onChange={(e)=> setPassword(e.target.value)} placeholder='Password' />
         </div>
         <div className={style.forget}>
           <div style={{display:"flex"}}><input type='checkBox' /><p>Remember me</p></div>
@@ -41,8 +50,7 @@ export const Login = () => {
         }
       </div>
       <div>
-        <p>Don't have an account, Register <Link to="/auth/signup"><b>Sign Up</b></Link> </p>
-        
+        <p>Don't have an account, Register <Link to="/auth/signup"><b>Sign Up</b></Link></p>
       </div>
       <div style={{display:"column"}}>
         <p>or connect with</p>
