@@ -11,6 +11,7 @@ import { Signup } from '../pages/auth/signup'
 import { Community } from '../components/home/community'
 import { Interview } from '../components/home/interview'
 import { Screen } from '../pages/product/Screen'
+import { ForgetPassword } from '../pages/auth/ForgetPassword'
 
 export const AllRoutes = () => {
   return (
@@ -22,6 +23,7 @@ export const AllRoutes = () => {
             <Route path="#interview" element={<Interview />} />
             <Route path='/auth/signup' element={<Signup />}/>
             <Route path='/auth/login' element={<Login />}/>
+            <Route path='/auth/forget_password' element={<ForgetPassword />} />
             <Route path='/features/real-world-questions' element={<RealWorldQuestions />} />
             <Route path='/contact-us' element={<Contact />} />
             <Route path='/privacy' element={<PrivacyPolicy />} />

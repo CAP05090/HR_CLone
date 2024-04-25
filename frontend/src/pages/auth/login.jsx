@@ -1,26 +1,20 @@
 import React, { useState } from 'react'
+import { useDispatch } from "react-redux"
 import { Link } from 'react-router-dom'
 import style from "./login.module.css"
+import { loginDetails } from '../../redux/appReducers/action'
 
 export const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [token, setToken] = useState("")
+  const dispatch = useDispatch()
   const userData = {email, password}
 
-  const handleLogin = async()=>{
-    try {
-      let res = await axios.post("", userData)
-      if (res.data.token){
-        setLogin(true)
-        setToken(token)
-      }
-      console.log(res.data)
-    } catch (error) {
-      console.log(error.message)
-    }
+  const handleLogin = async(e)=>{
+   e.preventDefault();
+   dispatch(loginDetails(email, password))
   }
-
   return (
     <div className={style.login}>
       <div>
@@ -39,15 +33,15 @@ export const Login = () => {
         </div>
         <div className={style.forget}>
           <div style={{display:"flex"}}><input type='checkBox' /><p>Remember me</p></div>
-          <Link to="">Forgot your password?</Link>
+          <Link to="/auth/forget_password" style={{color:"red"}}>Forgot your password?</Link>
         </div>
-        <button onClick={handleLogin}>Login</button>
+        <button className={style.btn} onClick={handleLogin}>Login</button>
         {
           token && <h1>Token: {token}</h1>
         }
       </div>
       <div>
-        <p>Don't have an account, Register <Link to="/auth/signup">Sign Up</Link> </p>
+        <p>Don't have an account, Register <Link to="/auth/signup"><b>Sign Up</b></Link> </p>
         
       </div>
       <div style={{display:"column"}}>
