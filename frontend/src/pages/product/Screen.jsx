@@ -1,5 +1,6 @@
 import React from 'react'
-import { Navbar } from '../../components/navbar/Navbar'
+import { Navbar } from '../../components/home/navbar/Navbar'
+import { Footer } from '../../components/home/footer/Footer'
 
 export const Screen = () => {
   return (
@@ -37,6 +38,7 @@ export const Screen = () => {
         resources
       </div>
     </div>
+    <Footer />
     </>
   )
 }
