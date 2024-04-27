@@ -5,13 +5,15 @@ import { RealWorldQuestions } from '../pages/product/realWorldQuestions'
 import { Contact } from '../pages/Contact'
 import { PrivacyPolicy } from '../pages/PrivacyPolicy'
 import { RolesDirectory } from '../pages/resource/RolesDirectory'
-import { Dashboard } from '../pages/Dashboard'
+import { Dashboard } from '../pages/dashboard/Dashboard'
 import { Login } from '../pages/auth/login'
 import { Signup } from '../pages/auth/signup'
 import { Community } from '../components/home/community'
 import { Interview } from '../components/home/interview'
 import { Screen } from '../pages/product/Screen'
 import { ForgetPassword } from '../pages/auth/ForgetPassword'
+import { DashboardFooterRoute } from "./DashboardFooterRoute"
+import { DashboardNavbar } from './DashboardNavbar'
 
 export const AllRoutes = () => {
   return (
@@ -31,6 +33,8 @@ export const AllRoutes = () => {
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/screen' element={<Screen />} />
         </Routes>
+        <DashboardFooterRoute />
+        <DashboardNavbar />
     </BrowserRouter>
   )
 }

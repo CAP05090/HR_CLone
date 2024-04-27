@@ -1,25 +1,27 @@
-.link {
-    margin: 5px 15px;
-    text-decoration: none;
-    font-size: 15px;
-}
 .navbar{
     position: relative;
-    border-radius: 10px;
-    background-color: rgb(214, 251, 239);
-    border: 0px solid red;
     display: flex;
-    justify-content: space-around;
-    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    z-index: 2;
+    width: 95%;
+    margin: auto;
 }
-.menu {
+.logo{
+    display: block;
+    width: 300px;
+    height: 40px;
+}
+.menubtn{ display: none; }
+.log1{ display: none; }
+.menu{
     display: flex;
+    z-index: 1;
 }
-.menuItem {
+.menuItems{
     display: flex;
-}
-.menubtn {
-    display: none;
+    list-style: none;
 }
 .dropbtn {
     padding: 5px auto;
@@ -33,6 +35,7 @@
 }
 .dropdown_content {
     display: none;
+    flex-direction: column;
     position: absolute;
     background-color: #e4e1e1;
     min-width: 160px;
@@ -43,20 +46,15 @@
     color: black;
     margin: 10px;
     text-decoration: none;
-    display: block;
 }
 .lnk:hover {
-    background-color: #ddd;
+    background-color: #8fc7f6;
 }
 .dropdown:hover .dropdown_content {
-    display: block;
+    display: grid;
 }
 .dropdown:hover .dropbtn {
-    color: #3e8e41;
-}
-.logo {
-    width: 200px;
-    height: 30px;
+    color: #f50303;
 }
 .usercontent {
     display: flex;
@@ -71,43 +69,55 @@
     padding: 1px auto;
     margin: auto 10px;
 }
-@media screen and (max-width: 700px) {
-    .navbar {
-        flex-direction: column;
+
+ @media screen and (max-width:800px){
+    .navbar{
+        flex-direction: row-reverse;
         align-items: flex-start;
     }
-    .usercontent {
-        border: 1px solid red;
-        display: grid;
-        text-align: center;
-        margin: auto;
+    .logo{
+        width: 200px;
     }
-    .userlink {
-        border: 1px solid green;
-    }
-    .menu {
-        position: fixed;
+    .menu{
         right: 0;
         margin-right: 10%;
         flex-direction: column;
-        align-items: flex-end;
+        align-items: flex-start;
         gap: 11px;
         z-index: 3;
     }
-    .menubtn {
-        width: 20px;
-        height: 20px;
+    .menubtn{
+        width: 40px;
         display: block;
         cursor: pointer;
     }
-    .menuItem {
-        margin: 45px;
-        display: none;
+    .log1{
+        display: block;
+        padding: 20px 50px;
+        width:100%;
+    }
+    .menuItems{
+        margin:25px;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 13px;
         border-radius: 10px;
-        background: rgb(232, 234, 236);
-        padding: 24px 33px;
+        background: rgb(205, 217, 239);
+    }
+    .menu>li{
+        display: none;
+    }
+    .usercontent {
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 20px;
+    }
+    .userlink {
+        width: max-content;
+        padding: 0px 30px;
+        font-weight: 600;
     }
 }
+
+ 
