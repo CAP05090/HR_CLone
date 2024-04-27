@@ -13,7 +13,8 @@ import { Interview } from '../components/home/interview'
 import { Screen } from '../pages/product/Screen'
 import { ForgetPassword } from '../pages/auth/ForgetPassword'
 import { DashboardFooterRoute } from "./DashboardFooterRoute"
-import { DashboardNavbar } from './DashboardNavbar'
+import { DashboardNavbar } from './DashboardNavbarRoute'
+import { SolutionRoute } from './SolutionRoute'
 
 export const AllRoutes = () => {
   return (
@@ -33,6 +34,7 @@ export const AllRoutes = () => {
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/screen' element={<Screen />} />
         </Routes>
+        <SolutionRoute />
         <DashboardFooterRoute />
         <DashboardNavbar />
     </BrowserRouter>

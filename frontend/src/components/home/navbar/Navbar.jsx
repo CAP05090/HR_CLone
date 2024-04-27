@@ -10,9 +10,9 @@ export const Navbar = () => {
     { to: "/features/real-world-questions", displaytext: "Real World Questions" }
   ];
   let solutionLink = [
-    { to: "/skill-strategy", displaytext: "Set Up a Skills Strategy" },
-    { to: "/talent-brand", displaytext: "Showcase Your Talent Brand" },
-    { to: "/embrace-ai", displaytext: "Embrace AI" }
+    { to: "/solutions/skills-strategy", displaytext: "Set Up a Skills Strategy" },
+    { to: "/solutions/talent-brand", displaytext: "Showcase Your Talent Brand" },
+    { to: "/products/ai", displaytext: "Embrace AI" }
   ];
   let resourcesLink = [
     { to: "/roles-directory", displaytext: "Roles Directory" },
