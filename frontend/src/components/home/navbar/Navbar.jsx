@@ -12,12 +12,13 @@ export const Navbar = () => {
   let solutionLink = [
     { to: "/solutions/skills-strategy", displaytext: "Set Up a Skills Strategy" },
     { to: "/solutions/talent-brand", displaytext: "Showcase Your Talent Brand" },
+    {to:"/solutions/internal-talent", displaytext:"Mobilize Your Internal Talent"},
     { to: "/products/ai", displaytext: "Embrace AI" }
   ];
   let resourcesLink = [
-    { to: "/roles-directory", displaytext: "Roles Directory" },
-    { to: "/integrations", displaytext: "Integrations" },
-    { to: "/what's-news", displaytext: "What's New" }
+    { to: "/roles-directory/", displaytext: "Roles Directory" },
+    { to: "/integrations/", displaytext: "Integrations" },
+    { to: "/what's-new/", displaytext: "What's New" }
   ];
 
   return (

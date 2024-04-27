@@ -4,21 +4,22 @@ import style from "./footer.module.css"
 
 export const Footer = () => {
   let productLink = [
-    {to:"screen", displaytext:"Screen"},
+    {to:"/screen", displaytext:"Screen"},
     {to:"/features/real-world-questions", displaytext:"Real World Questions"}
   ]
   let solutionLink = [
-    {to:"/solutions/skill-strategy", displaytext:"Set Up a Skills Strategy"},
+    {to:"/solutions/skills-strategy", displaytext:"Set Up a Skills Strategy"},
     {to:"/solutions/talent-brand", displaytext:"Showcase Your Talent Brand"},
-    {to:"/solutions/internal-talent", displaytext:"Mobilize Your Internal Talent"}
+    {to:"/solutions/internal-talent", displaytext:"Mobilize Your Internal Talent"},
+    { to: "/products/ai", displaytext: "Embrace AI" }
   ]
   let resourcesLink = [
     {to:"/roles-directory", displaytext:"Roles Directory"},
     {to:"/integrations", displaytext:"Integrations"},
-    {to:"/what's-news", displaytext:"What's New"}
+    {to:"/what's-new", displaytext:"What's New"}
   ]
   let aboutLink = [
-    {to:"/carrier", displaytext:"Careers"},
+    {to:"/careers", displaytext:"Careers"},
     {to:"/newsrooms", displaytext:"Newsroom"},
     {to:"/status", displaytext:"Status"},
     {to:"/trust", displaytext:"Trust"}
