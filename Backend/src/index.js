@@ -8,6 +8,7 @@ const { connection } = require("./configs/db")
 const { limiter } = require("./middlewares/Limiter.Middleware")
 const { errorHandle } = require("./middlewares/errorHandling.middleware")
 const { userRouter } = require("./routes/userRoutes")
+const { questionRouter } = require("./routes/questionsRoute")
 
 const app = express()
 const PORT = process.env.PORT
@@ -20,6 +21,7 @@ app.use(cors({origin:"*"}))
 
 // Routes
 app.use("/users", userRouter)
+app.use("/challenge", questionRouter)
 
 // Swagger-Docs
 const options = {
