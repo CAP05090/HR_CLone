@@ -1,0 +1,31 @@
+
+.algo{
+    width: 95%;
+    margin: auto;
+}
+#topic{
+    font-size: 28px;
+    font-weight: 500;
+    margin: 10px;
+}
+.question{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 5px;
+}
+.title{
+    font-size: 18px;
+    text-align: left;
+}
+.details{
+    font-size: 14px;
+}
+.btn{
+    border-radius: 5px;
+    width: 100%;
+    margin: auto;
+    border: 1px solid dimgray;
+    padding: 5px 100px;
+    display: block;
+}

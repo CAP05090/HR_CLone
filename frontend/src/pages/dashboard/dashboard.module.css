@@ -1,0 +1,21 @@
+.topics{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.topic{
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.tlogo{
+    margin: auto 10px;
+    width: 30px;
+    height: 30px;
+}
+@media screen and (max-width:700px) {
+    .topics{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

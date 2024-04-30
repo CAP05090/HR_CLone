@@ -7,7 +7,7 @@ function App() {
 
   return (
       <ChakraProvider>
-        <AllRoutes />
+        <div style={{width:"100%", margin:"auto", backgroundColor:"rgb(248, 250, 260)"}}><AllRoutes /></div>
       </ChakraProvider>
   )
 }

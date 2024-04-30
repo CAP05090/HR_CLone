@@ -9,6 +9,7 @@ import { ResourseRoute } from './ResourseRoute'
 import { HomePageRoute } from './HomePageRoute'
 import { AuthRoute } from './AuthRoute'
 import { ProductRoute } from './ProductRoute'
+import { DashboardTopicsRoute } from './DashboardTopicsRoute'
 
 export const AllRoutes = () => {
   return (
@@ -24,6 +25,7 @@ export const AllRoutes = () => {
         <ResourseRoute />
         <DashboardFooterRoute />
         <DashboardNavbar />
+        <DashboardTopicsRoute />
     </BrowserRouter>
   )
 }
