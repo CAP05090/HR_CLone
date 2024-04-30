@@ -15,7 +15,7 @@ questionRouter.post("/add", async(req, res)=>{
 //Read Question
 questionRouter.get("/", async(req, res)=>{
     try {
-        const question = await QuestionModel.findOne()
+        const question = await QuestionModel.find()
         res.send(question)
     } catch (error) {
         res.status(400).send(error.message)
