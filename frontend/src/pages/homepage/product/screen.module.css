@@ -1,0 +1,142 @@
+.screen{
+    width: 95%;
+    margin: auto;
+}
+.screen>h1{
+    font-size: 33px;
+    font-weight: 700;
+    text-align: center;
+}
+.screen>p{
+    margin: 30px 10px;
+    font-size: 22px;
+}
+.screen>img{
+    width: 95%;
+    display: block;
+    margin: 20px auto;
+}
+.company{
+    padding: 70px auto;
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+.king{
+    width: 45%;
+    padding: 50px 40px;
+    margin: 20px 10px;
+    background-color: aliceblue;
+}
+.king>img{
+    width: 100px;
+    display: block;
+    margin: 10px auto;
+}
+.king>p{
+    text-align: center;
+    margin: auto;
+}
+.king>h2{font-size: 18ox; font-weight: 600; 
+    text-align: center; margin: 10px;
+}
+.tags{
+    margin: 20px;
+    padding: 20px 10px;
+}
+.tags>p{
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+    padding: 40px ;
+}
+.tags>img{
+    display: block;
+}
+.detection{
+    width: 90%;
+    margin: auto;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+.detection>h1{
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+    padding: 30px;
+}
+.detection>p{
+    font-size: 20px;
+    margin: 10px 200px;
+}
+.container{
+    display: flex;
+}
+.container>div{
+    border: 1px solid grey;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(59, 65, 64);
+}
+.container>div>h2{
+    font-size: 22px;
+    font-weight: 500;
+}
+.container>div>p{
+    font-size: 16px;
+    text-align: left;
+}
+#innovation{
+    margin: 30px 10px;
+    font-size: 36px;
+    font-weight: 400;
+}
+.feature{
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.feature>img{
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+.feature>div{
+    margin: 10px auto;
+    padding: 20px auto;
+}
+.feature>div>h2{
+    margin: 10px auto;
+    font-size: 22px;
+    font-weight: 500;
+}
+.feature>div>p{
+    margin: 10px auto;
+    font-size: 18px;
+    text-align: left;
+}
+
+@media screen and (max-width:700px){
+    .company{
+        flex-direction: column;
+    }
+    .king{
+        width: 100%;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .detection>p{
+        margin: auto;
+    }
+    .feature{
+        flex-direction: column;
+    }
+    .feature>img{
+        width: 100%;
+    }
+}
