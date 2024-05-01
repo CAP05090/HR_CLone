@@ -1,0 +1,9 @@
+.strategy{
+    width: 95%;
+    margin:auto;
+}
+.strategy>h1{
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
