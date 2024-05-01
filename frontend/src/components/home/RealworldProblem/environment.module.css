@@ -1,0 +1,103 @@
+.environment{
+    background-color: black;
+    color: white;
+    margin: auto;
+}
+#envtag{
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    padding: 50px 20px;
+}
+.btns{
+    display: flex;
+    justify-content: space-around;
+}
+.btn{
+    border: 1px solid red;
+    padding: 20px 25px;
+    margin: 10px auto;
+}
+.uniquenv{
+    padding: 50px 20px;
+}
+#tag{
+    font-size: 46px;
+    font-weight: 500;
+    text-align: center;
+    padding: 20px auto;
+    margin-bottom: 50px;
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.container>div{
+    width: 30%;
+    border: 1px solid dimgray;
+    border-radius: 10px;
+    padding: 30px 20px;
+    margin: 20px;
+}
+.container>div>h2{
+    font-size: 18px;
+    font-weight: 500;
+}
+.container>div>p{
+    font-size: 14px;
+    text-align: left;
+}
+.testskills{
+    width: 95%;
+    margin: auto;
+    display: flex;
+}
+.testskills>div{
+    margin: auto;
+    padding: auto;
+}
+.testskills>img{
+    margin: auto;
+    display: block;
+    width: 50%;
+}
+.testskills>div>h1{
+    font-size: 32px;
+    font-weight: 500;text-align: left;
+    margin: 10px auto;
+}
+.testskills>div>p{
+    margin: 10px auto;
+    font-size: 18px;
+    text-align: left;
+}
+.testskills>div>ul>li{
+    padding: auto;
+    margin: 10px 30px;
+    font-size: 16px;
+    text-align: left;
+}
+
+@media screen and (max-width:700px) {
+    .btns{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container{
+        flex-direction: column;
+    }
+    #tag{
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    .container>div{
+        width: 100%;
+        margin: 20px auto;
+    }
+    .testskills{
+        flex-direction: column;
+    }
+    .testskills>img{
+        width: 95%;
+    }
+}
