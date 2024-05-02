@@ -1,9 +1,140 @@
 .strategy{
-    width: 95%;
-    margin:auto;
+    background-color: rgb(70, 69, 69);
+    color: white;
+    margin:20px auto;
+    padding: 20px;
 }
 .strategy>h1{
     font-size: 32px;
     font-weight: 700;
-    text-align: center;
+    text-align: center;margin: 30px auto;
+}
+.strategy>p{
+    font-size: 22px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.strategy>button{
+    margin: 20px;
+    padding: 5px 10px;
+    background-color: aliceblue;
+    color: black;
+    font-weight: 500;
+}
+.frontorg{
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px 0px;
+}
+.frontorg>h1{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 20px auto;
+}
+.frontorg>div{
+    display: flex;
+    margin: 20px;
+}
+.frontorg>div>p{
+    padding: 10px;
+    width: 50%;
+    font-size: 24px;
+}
+.frontorg>div>img{
+    padding: 10px;
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+.container{
+    width: 95%;
+    margin: auto auto 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.container>div{
+    border-radius: 20px;
+    border: 1.5px solid dimgray;
+    padding: 30px 20px;
+    margin: 25px;
+    width: 33%;
+}
+.container>div>img{
+    display: block;
+    margin: 20px 0px;
+}
+.container>div>h1{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px auto;
+}
+.container>div>p{
+    font-size: 14px;
+}
+.feature{
+    display: flex;
+    width: 95%;
+    margin: 20px auto;
+}
+.feature>div{
+    padding: 20px 30px;
+    margin: 20px;
+    width: 50%;
+}
+.feature>img{
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+.feature>div>h2{
+    color: rgb(1, 136, 1);
+    font-size: 16px;
+    font-weight: 700;
+}
+.feature>div>h1{
+    font-size: 26px;
+    font-weight: 700;
+    margin: 20px auto;
+}
+.feature>div>p{
+    font-size: 18px;
+    margin: 20px auto;
+}
+.feature>div>ul>li{
+    font-size: 18px;margin: 1px 20px;
+}
+
+@media screen and (max-width:700px) {
+    .frontorg>div{
+        flex-direction: column-reverse;
+    }
+    .frontorg>div>p{
+        width: 100%;
+        font-size: 20px;
+    }
+    .frontorg>div>img{
+        width: 100%;
+        display: block;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .container>div{
+        padding: 30px 10px;
+        border-radius: 20px;
+        width: 100%;
+        margin: 20px auto;
+    }
+    .feature{
+        flex-direction: column;
+    }
+    .feature>div{
+        width: 95%;
+        margin: 30px auto;
+    }
+    .feature>img{
+        width: 95%;
+        display: block;
+        margin: auto;
+    }
 }
