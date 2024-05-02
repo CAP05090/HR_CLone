@@ -1,21 +1,67 @@
-
+.skill{
+    width: 95%;
+    margin: 20px auto;
+}
+#head{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 20px auto;
+}
+.head{
+    font-size: 26px;
+    margin: 10px auto;
+}
 .skillScreen{
+    width: 95%;
+    margin: 40px auto;
     display: flex;
-    border: 0px solid green;
+    padding: auto 10px;
 }
 .skillScreen>div{
-    border: 0px solid red;
-    margin: 5px
+    width: 100%;
+    padding: 10px;
+    margin: auto;
 }
-.text{
-    text-align: left;
+.skillScreen>img{
+    width: 50%;
+    display: block;
+    margin: auto;
 }
-.heading{
-    margin:auto 20px;
+.skillScreen>div>h2{
+    font-size: 32px;
+    font-weight: 500;
+    margin: 20px auto;
+}
+.skillScreen>div>p{
+    font-size: 22px;
+    margin: 20px auto;
+}
+.link{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 700px){
     .skillScreen{
-        display: grid;
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    .skillScreen>img{
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    .skillScreen>div>h2{
+        font-size: 24px;
+        font-weight: 500;
+        margin: 10px auto;
+    }
+    .skillScreen>div>p{
+        font-size: 18px;
+        margin: 10px auto;
     }
 }
+
+/* <figure style="background-image:url(https://www.hackerrank.com/wp-content/uploads/2022/09/report-2.jpg);">
+</figure> */

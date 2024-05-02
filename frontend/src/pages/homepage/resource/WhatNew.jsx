@@ -5,9 +5,11 @@ import { Footer } from '../../../components/home/footer/Footer'
 export const WhatNew = () => {
   return (
     <>
-    <Navbar />
-    <div>WhatNew</div>
-    <Footer />
+    <div>
+      <img src="" alt="" />
+      <h2></h2>
+    </div>
+    <button>search</button>
     </>
   )
 }

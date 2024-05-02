@@ -1,0 +1,65 @@
+.interview{
+    width: 95%;
+    margin: auto;
+}
+.interview>h3{
+    margin: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+.interview>h2{
+    margin: 10px auto 20px;
+    font-size: 48px;
+    text-align: center;
+    font-weight: 500;
+}
+.interview>p{
+    text-align: center;
+    font-size: 22px;
+    padding: 30px 170px;
+}
+.interview>img{
+    width: 95%;
+    display: block;
+    margin: auto;
+}
+.container{
+    display: flex;
+    width: 95%;
+    margin: 50px auto;
+}
+.container>div{
+    width: 50%;
+    margin: 10px 20px;
+}
+.container>div>div>p{
+    font-size: 24px;
+    font-weight: 500;
+}
+.container>div>p{
+    font-size: 18px;
+    margin: 20px auto;
+}
+
+
+@media screen and (max-width:700px) {
+    .interview>h3{
+        margin: 20px;
+        font-size: 12px;
+    }
+    .interview>h2{
+        margin: 10px auto 20px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .interview>p{
+        font-size: 18px;
+        padding: 20px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .container>div{
+        width: 95%;
+    }
+}
