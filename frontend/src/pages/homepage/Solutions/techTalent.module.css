@@ -1,0 +1,163 @@
+.head{
+    background-color: black;
+    padding: 20px;
+    color: white;
+}
+.head>h1{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 20px auto;
+}
+.head>p{
+    font-size: 22px;
+}
+.head>button{
+    padding: 10px;
+    margin: 20px auto;
+}
+#tag{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 20px;
+    padding: 30px auto;
+}
+.tag{
+    display: flex;
+    width: 95%;
+    margin: 10px auto;
+}
+.tag>div{
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+}
+.tag>img{
+    padding: 20px;
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+.tag>div>p{
+    font-size: 18px;
+}
+.container{
+    width: 95%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+.container>div{
+    border: 1.2px solid dimgray;
+    width: 33%;
+    padding: 20px;
+    margin: 20px 1px;
+    border-radius: 10px;
+}
+.container>div>h2{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px auto;
+}
+.container>div>img{
+    margin: 20px 0px;
+    display: block;
+}
+.container>div>p{
+    font-size: 14px;
+}
+.feature{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    margin: 20px;
+}
+.feature>div{
+    width: 50%;
+    padding: 10px;
+    margin: 20px auto;
+}
+.feature>img{
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+.feature>div>h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+.feature>div>h1{
+    font-size: 32px;
+    font-weight: 600;
+    margin: 20px auto;
+}
+.feature>div>p{
+    font-size: 18px;
+    margin: 10px auto;
+}
+.feature>div>ul>li{
+    margin-left: 20px;
+    font-size: 18px;
+}
+.tags{
+    text-align: center;
+    padding: 20px;
+}
+.tags>p{
+    font-size: 28px;
+    font-weight: 400;
+}
+.devwant{
+    background-color: rgb(25, 25, 25);
+    color: white;
+    padding: 30px;
+    margin: 20px auto;
+}
+.devwant>h1{
+    text-align: center;
+    font-size: 56px;
+    font-weight: 700;
+    margin: 20px;
+}
+.devwant>p{
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;
+}
+
+@media screen and (max-width:700px) {
+    .tag{
+        flex-direction: column-reverse;
+    }
+    .tag>div{
+        width: 100%;
+    }
+    .tag>img{
+        width: 100%;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .container>div{
+        width: 100%;
+    }
+    .feature{
+        flex-direction: column;
+    }
+    .feature>div{
+        width: 100%;
+    
+    }
+    .feature>img{
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    .devwant>h1{
+        font-size: 26px;
+        margin: 20px auto;
+    }
+    .devwant>p{
+        font-size: 18px;
+    }
+}
