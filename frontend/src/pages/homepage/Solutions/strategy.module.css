@@ -1,3 +1,21 @@
+.ques>p{
+    background-color: rgb(242, 246, 249);
+}
+.ques>p>div{
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.ques>p>div>p{
+    font-weight: 600;
+}
+.ques>p>div>img{
+    height: 90%;
+}
+.ques>div{
+    background-color: aliceblue;
+    padding: 20px;
+}
 .strategy{
     background-color: rgb(70, 69, 69);
     color: white;
@@ -74,11 +92,10 @@
 .feature{
     display: flex;
     width: 95%;
-    margin: 20px auto;
+    margin: auto;
 }
 .feature>div{
-    padding: 20px 30px;
-    margin: 20px;
+    padding: 20px auto;
     width: 50%;
 }
 .feature>img{
@@ -101,7 +118,28 @@
     margin: 20px auto;
 }
 .feature>div>ul>li{
-    font-size: 18px;margin: 1px 20px;
+    font-size: 18px;
+    margin: 1px 20px;
+}
+.expert{
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+.expert>div{
+    width: 50%;
+    margin: 20px;
+}
+.expert>div>h1{
+    margin: 20px auto;
+    font-size: 32px;
+    font-weight: 700;
+}
+.expert>div>p{
+    font-size: 18px;
+}
+.questions{
+    padding: auto 10px;
 }
 
 @media screen and (max-width:700px) {
@@ -136,5 +174,14 @@
         width: 95%;
         display: block;
         margin: auto;
+    }
+    .expert{
+        flex-direction: column;
+    }
+    .expert>div{
+        width: 100%;
+    }
+    .expert>div>h1{
+        font-size: 28px;
     }
 }

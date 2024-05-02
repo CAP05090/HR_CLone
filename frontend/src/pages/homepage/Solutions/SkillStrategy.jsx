@@ -1,7 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useCollapse } from "react-collapsed"
 import { Navbar } from '../../../components/home/navbar/Navbar'
 import { Footer } from '../../../components/home/footer/Footer'
 import style from "./strategy.module.css"
+
+const FaqItem = ({question, answer}) => {
+  const [isExpanded, setIsExpanded] = useState(false)
+  const {getCollapseProps, getToggleProps} = useCollapse({isExpanded})
+  const handleClick = ()=>{
+    setIsExpanded(!isExpanded)
+  }
+  return (
+    <div className={style.ques}>
+      <p {...getToggleProps({onClick: handleClick})}>
+        {
+          isExpanded ? <div><p>{question}</p> <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIz37plZx0zrNfuQ1SgpRcx0EDab7rCHhRbNSmengZpIRSqtI&s' alt='colapse' style={{width:"15px"}} /></div>
+          : <div><p>{question}</p> <img src='https://clipart-library.com/img1/1318204.jpg' alt='expand' style={{width:"15px"}} /></div>
+        }
+      </p>
+      <div className={style.answer} {...getCollapseProps()}>
+      {Array.isArray(answer) ? (
+          answer.map((ans, id) => (
+            <p key={id}>{ans}</p>
+          ))
+        ) : (
+          <p>{answer}</p>
+        )}
+      </div>
+    </div>
+  )
+}
 
 export const SkillStrategy = () => {
   return (
@@ -77,34 +105,36 @@ export const SkillStrategy = () => {
       </div>
       <img src="https://www.hackerrank.com/wp-content/uploads/2023/10/roles_directory.svg" alt="test skills" />
     </div>
-    <div>
-      <h1>Expert services</h1>
-      <p>Need a more tailored solution? Tap our expert services to drive your skills strategy implementation.</p>
-    </div>
-    <div className={style.question}>
+    <div className={style.expert}>
       <div>
-        <h2>Skills Mapping</h2>
-        <p>Expert IO Psychologists map your custom skills taxonomy to our out-of-the-box skills taxonomy.</p>
+        <h1>Expert services</h1>
+        <p>Need a more tailored solution? Tap our expert services to drive your skills strategy implementation.</p>
       </div>
-      <div>
-        <h2>Content Validation</h2>
-        <p>A local validation study in which experts link test content to job requirements to establish and document the job relatedness of technical tests.</p>
-      </div>
-      <div>
-        <h2>Assessement Content Management</h2>
-        <p>Continued development of content and maintenance of assessments.</p>
-      </div>
-      <div>
-        <h2>JOb Analysis</h2>
-        <p>A scientific analysis of one or more roles in your organization to identify the important duties for the role and the knowledge, skills, and abilities (KSAs) that enable success.</p>
-      </div>
-      <div>
-        <h2>Criterian Validation</h2>
-        <p>A local validation study that establishes a correlation between test scores and job performance.</p>
-      </div>
-      <div>
-        <h2>Adverse Impact Analysis</h2>
-        <p>An analysis of group differences in test scores or passing rates and recommendations for reducing them, if observed.</p>
+      <div className={style.questions}>
+        <FaqItem
+          question="Skills Mapping"
+          answer="Expert IO Psychologists map your custom skills taxonomy to our out-of-the-box skills taxonomy."
+        />
+        <FaqItem
+        question="Content Validation"
+        answer="A local validation study in which experts link test content to job requirements to establish and document the job relatedness of technical tests."
+        />
+        <FaqItem
+        question="Assessment Content Management"
+        answer="Continued development of content and maintenance of assessments."
+        />
+        <FaqItem
+        question="Job Analysis"
+        answer="A scientific analysis of one or more roles in your organization to identify the important duties for the role and the knowledge, skills, and abilities (KSAs) that enable success."
+        />
+        <FaqItem
+        question="Criterion Validation"
+        answer="A local validation study that establishes a correlation between test scores and job performance."
+        />
+        <FaqItem
+        question="Adverse Impact Analysis"
+        answer="An analysis of group differences in test scores or passing rates and recommendations for reducing them, if observed."
+        />`
       </div>
     </div>
     <Footer />
