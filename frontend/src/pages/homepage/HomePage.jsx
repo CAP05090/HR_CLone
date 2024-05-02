@@ -9,7 +9,6 @@ export const HomePage = () => {
     <div style={{width:"99%", margin:"auto"}}>
       <Navbar />
       <Intro />
-      <About />
       <Footer />
     </div>
   )

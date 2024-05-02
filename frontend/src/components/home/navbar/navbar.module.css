@@ -72,7 +72,7 @@
 
  @media screen and (max-width:800px){
     .navbar{
-        flex-direction: row-reverse;
+        flex-direction: row;
         align-items: flex-start;
     }
     .logo{
@@ -82,7 +82,7 @@
         right: 0;
         margin-right: 10%;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-end;
         gap: 11px;
         z-index: 3;
     }
