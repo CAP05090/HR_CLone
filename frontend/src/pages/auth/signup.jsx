@@ -27,42 +27,32 @@ export const Signup = () => {
 
   return (
     <>
-    <div>
+    <div className={style.signup}>
       <img src='https://hrcdn.net/fcore/assets/brand/hr-logo-new-black-green-2f615594d2.svg' alt='logo' />
       <h1 className={style.tag}>For Developers</h1>
       <p>Practice coding, prepare for interviews, and get hired.</p>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Full Name</label><br/>
-          <input type='text' value={name} onChange={(e)=> setName(e.target.value)} placeholder='Enter Full Name'/><br/>
-          <label>Email</label><br/>
-          <input type='email' value={email} onChange={(e)=> setEmail(e.target.value)} placeholder='Enter Eamil' /><br/>
-          <label>Password</label><br/>
-          <input type='password' value={password} onChange={(e)=> setPassword(e.target.value)} placeholder='Enter Password' /><br/>
-          <label>Highest Education</label><br/>
-          <input type='text' value={education} onChange={(e)=> setEducation(e.target.value)} placeholder='Your higher education' /><br/>
-          <label>Stream</label><br/>
-          <input type='text' value={stream} onChange={(e)=> setStream(e.target.value)} placeholder='i.e. EE, CSE, EC etc. ' /><br/>
-        </div>
-        <div style={{display:"flex"}}>
-          <input type='checkbox' />
-          <p>I agree to HackerRank's Terms of Service and Privacy Policy.</p>
-        </div>
+      <form onSubmit={handleSubmit} className={style.form}>
+        <label>Full Name</label><br/>
+        <input type='text' value={name} onChange={(e)=> setName(e.target.value)} placeholder='Enter Full Name'/><br/>
+        <label>Email</label><br/>
+        <input type='email' value={email} onChange={(e)=> setEmail(e.target.value)} placeholder='Enter Eamil' /><br/>
+        <label>Password</label><br/>
+        <input type='password' value={password} onChange={(e)=> setPassword(e.target.value)} placeholder='Enter Password' /><br/>
+        <label>Highest Education</label><br/>
+        <input type='text' value={education} onChange={(e)=> setEducation(e.target.value)} placeholder='Your higher education' /><br/>
+        <label>Stream</label><br/>
+        <input type='text' value={stream} onChange={(e)=> setStream(e.target.value)} placeholder='i.e. EE, CSE, EC etc. ' /><br/>
+        <p> <input type='checkbox' /> I agree to HackerRank's Terms of Service and Privacy Policy.</p>
         <button type='submit'>Create an account</button>
       </form>
+      <p id={style.login}>If already registered plaese <Link style={{color:"green"}} to="/auth/login">LogIn</Link></p>
     </div>
-    <div>
-      <p>If already registered plaese <Link to="/auth/login">LogIn</Link></p>
-    </div>
-    <div style={{display:"column"}}>
-      <p>or connect with</p>
-      <hr/>
-    </div>
-    <div style={{width:"50px"}}>
-      <Link to="/fb"><img src='https://hrcdn.net/fcore/assets/facebook-colored-af4249157d.svg' alt='' /></Link>
-      <Link to="/gmail"><img src='https://hrcdn.net/fcore/assets/google-colored-20b8216731.svg' alt='' /></Link>
-      <Link to="/linkedin"><img src='https://hrcdn.net/fcore/assets/linkedin-colored-1db195795c.svg' alt='' /></Link>
-      <Link to="/git"><img src='https://hrcdn.net/fcore/assets/github-colored-1db995054b.svg' alt='' /></Link>
+    <p id={style.ssss}>or connect with</p>
+    <div className={style.socials}>
+      <Link className={style.social} to="/fb"><img src='https://hrcdn.net/fcore/assets/facebook-colored-af4249157d.svg' alt='' /></Link>
+      <Link className={style.social} to="/gmail"><img src='https://hrcdn.net/fcore/assets/google-colored-20b8216731.svg' alt='' /></Link>
+      <Link className={style.social} to="/linkedin"><img src='https://hrcdn.net/fcore/assets/linkedin-colored-1db195795c.svg' alt='' /></Link>
+      <Link className={style.social} to="/git"><img src='https://hrcdn.net/fcore/assets/github-colored-1db995054b.svg' alt='' /></Link>
     </div>
     </>
   )
