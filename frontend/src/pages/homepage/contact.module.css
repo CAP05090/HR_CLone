@@ -1,0 +1,89 @@
+.contact{
+    width: 95%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.contact>div{
+    width: 50%;
+}
+#head>h1{
+    font-size: 36px;
+    margin: 0px 20px 20px;
+    font-weight: 600;
+}
+#head>p{
+    margin: 20px;
+    font-size: 20px;
+}
+.head>h2{
+    margin: 40px 20px 10px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.head>p{
+    margin: 20px 30px;
+    font-size: 20px;
+}
+.organisation>p{
+    font-size: 16px;
+    margin: 30px 20px;
+}
+.Form{
+    width: 90%;
+    margin: 10px auto 40px;
+    border-radius: 10px;
+    padding: 0px 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.Form>h1{
+    font-size: 32px;
+    font-weight: 500;
+    margin: 20px;
+}
+.Form>p{
+    font-size: 18px;
+    margin: 20px;
+}
+.Form>form{
+    padding: 20px 0px;
+}
+.Form>form>label{
+    font-weight: 500;
+    margin: 20px;
+}
+.Form>form>input{
+    border-radius: 5px;
+    padding: 7px;
+    width: 70%;
+    border: 1px solid dimgray;
+    margin: 20px;
+}
+.options{
+    border: 1px solid dimgray;
+    border-radius: 5px;
+    padding: 7px;
+    width: 70%;
+    margin: 20px;
+}
+.options>option{
+    background-color: rgb(218, 216, 216);
+}
+.Form>form>button{
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(58, 58, 250);
+    display: block;
+    font-weight: 600;
+    padding: 7px 150px;
+    margin: 20px;
+}
+@media screen and (max-width:700px) {
+    .contact{
+        flex-direction: column;
+        margin: 0px auto;
+    }
+    .contact>div{
+        width: 100%;
+    }
+}
