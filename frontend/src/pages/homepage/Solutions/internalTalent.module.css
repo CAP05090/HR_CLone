@@ -1,0 +1,223 @@
+.head{
+    background-color: black;
+    color: white;
+    padding: 30px ;
+    margin: 10px 0px;
+}
+.head>h1{
+    width: 50%;
+    text-align: left;
+    font-size: 56px;
+    font-weight: 600;
+    margin: 20px;
+}
+.head>p{
+    font-size: 20px;
+    width: 50%;
+    margin: 20px;
+}
+.head>button{
+    padding: 5px 10px;
+    margin: 20px;
+    color: green;
+    background-color: white;
+    font-weight: 500;
+    border-radius: 5px;
+}
+.tag{
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.tag>div{
+    display: flex;
+    justify-content: space-around;
+}
+.tag>div>p{
+    width: 50%;
+    margin: 20px;
+    font-size: 20px;
+}
+.tag>div>img{
+    display: block;
+    width: 50%;
+    margin: 20px;
+}
+#tag{
+    font-size: 56px;
+    font-weight: 700;
+    margin: 30px auto;
+}
+.container{
+    width: 95%;
+    margin: auto;
+    padding: 20px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.container>div{
+    border: 1px solid dimgray;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 33%;
+}
+.container>div>h2{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px auto;
+}
+.container>div>p{
+    font-size: 18px;
+}
+.feature{
+    width: 95%;
+    margin: 20px auto;
+    display: flex;
+}
+.feature>div{
+    width: 50%;
+    margin: 20px;
+}
+.feature>div>h1{
+    font-size: 26px;
+    font-weight: 500;
+}
+.feature>div>p{
+    margin: 30px auto 20px;
+    font-size: 20px;
+}
+.feature>div>ul>li{
+    font-size: 20px;
+    margin: auto 20px;
+}
+.feature>img{
+    display: block;
+    width: 50%;
+    margin: 20px;
+}
+.review{
+    width: 90%;
+    margin: auto;
+}
+.review>p{
+    font-size: 36px;
+    text-align: center;
+}
+.devmagnet{
+    padding: 50px 20px;
+    display: flex;
+    background-color: black;
+    color: white;
+}
+.devmagnet>div{
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+}
+.devmagnet>div>h1{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 30px auto;
+}
+.devmagnet>div>p{
+    font-size: 20px;
+    margin: 30px auto;
+}
+.devmagnet>img{
+    width: 50%;
+    display: block;
+    margin: auto;
+    padding: 20px;
+}
+.assessment{
+    padding: 50px 20px;
+    display: flex;
+}
+.assessment>img{
+    padding: 30px;
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+.assessment>div{
+    padding: 30px;
+    width: 50%;
+    margin: auto;
+}
+.assessment>div>h1{
+    font-size: 32px;
+    font-weight: 600;
+    margin: 20px auto;
+}
+.assessment>div>p{
+    font-size: 20px;
+    margin: 20px auto;
+}
+
+@media screen and (max-width:700px) {
+    .head{
+    }
+    .head>h1{
+        width: 100%;
+        font-size: 36px;
+        margin: 10px 0px;
+    }
+    .head>p{
+        width: 100%;
+        margin: 10px 0px;
+    }
+    .tag{
+        margin: 10px auto;
+        width: 95%;
+        box-shadow: none;
+    }
+    .tag>div{
+        flex-direction: column-reverse;
+    }
+    #tag{
+        font-size: 36px;
+    }
+    .tag>div>p, .tag>div>img{
+        margin: 20px auto;
+        width: 100%;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .container>div{
+        width: 95%;
+    }
+    .feature{
+        flex-direction: column;
+    }
+    .feature>div, .feature>img{
+        width: 100%;
+        padding: 10px auto;
+        margin: 20px auto;
+    }
+    .review>p{
+        font-size: 28px;
+    }
+    .devmagnet{
+        padding: 10px;
+        flex-direction: column;
+    }
+    .devmagnet>div, .devmagnet>img{
+        width: 100%;
+        padding: 10px 20px;
+        margin: 20px auto;
+    }
+    .assessment{
+        padding: 20px 10px;
+        flex-direction: column-reverse;
+    }
+    .assessment>div, .assessment>img{
+        width: 100%;
+        padding: 20px;
+        margin: auto;
+    }
+}
