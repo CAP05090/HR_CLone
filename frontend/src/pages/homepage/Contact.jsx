@@ -28,7 +28,7 @@ export const Contact = () => {
         <p>Please fill out the form below, and we'll contact you shortly.</p>
         <form action="">
           <label htmlFor="">Work Email</label><br/>
-          <input type="text" name="" id="" /><br/>
+          <input type="text" name="email" id="" placeholder='Enter Work Email' /><br/>
           <label htmlFor="">How can we help you?</label><br/>
           <select name="" id="" className={style.options}><br/>
             <option value="">Select</option>
