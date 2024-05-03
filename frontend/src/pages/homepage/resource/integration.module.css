@@ -1,0 +1,100 @@
+.head{
+    width: 95%;
+    margin: 50px auto;
+}
+.head>h1{
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 10px 20px;
+}
+.head>p{
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+}
+#intg{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 30px auto 10px;
+    text-align: center;
+}
+.integration{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.integration>div{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 0px 20px;
+    padding: 0px 20px;
+}
+.integration>div>h2{
+    font-size: 24px;
+    font-weight: 700;
+    margin: 20px auto;
+    text-align: center;
+}
+.integration>div>p{
+    font-size: 20px;
+    text-align: center;
+}
+.links{
+    text-align: center;
+    background-color: aliceblue;
+    padding: 30px;
+    margin: 50px 0px;
+}
+.links>h1{
+    font-size: 36px;
+    font-weight: 500;
+    margin: 10px auto 20px;
+}
+.links>ul{
+    display: flex;
+    justify-content: center;
+}
+.links>ul>li{
+    font-weight: 500;
+    margin: 5px;
+    list-style: none;
+}
+.container{
+    width: 90%;
+    margin: 50px auto;
+}
+.container>h1{
+    margin: 30px auto;
+    font-size: 28px;
+    font-weight: 600;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.card{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 20px;
+}
+.lnk>h2{
+    margin: 10px 30px;
+}
+.lnk>p{
+    margin: 10px 30px 50px;
+}
+@media screen and (max-width:700px) {
+    .head{
+        margin: 20px auto;
+    }
+    .integration{
+        flex-direction: column;
+    }
+    .integration>div{
+        padding: 20px;
+        margin: 10px 100px;
+    }
+    .cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

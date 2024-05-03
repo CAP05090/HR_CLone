@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar } from '../../../components/home/navbar/Navbar'
 import { Footer } from '../../../components/home/footer/Footer'
+import style from "./embraceAI.module.css"
 
 export const EmbraceAI = () => {
   return (
