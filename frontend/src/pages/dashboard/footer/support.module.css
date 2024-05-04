@@ -1,0 +1,41 @@
+.support{
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+.support>div, .support>img{
+    margin: auto 20px;
+    width: 50%;
+}
+.support>div>h1{
+    font-size: 40px;
+    font-weight: 500;
+}
+.support>div>p{
+    font-size: 20px;
+    margin: 20px auto;
+}
+.auth{
+    display: flex;
+}
+.auth>.link{
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 5px 10px;
+    margin: 10px;
+    font-weight: 500;
+}
+.auth>p{
+    padding: 5px 0px;
+    margin: 10px;
+}
+
+@media screen and (max-width:700px) {
+    .support{
+        flex-direction: column;
+    }
+    .support>div, .support>img{
+        width: 100%;
+        margin: 20px auto;
+    }
+}
