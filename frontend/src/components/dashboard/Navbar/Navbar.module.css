@@ -58,6 +58,7 @@
         background-color: aliceblue;
         flex-direction: row-reverse;
         align-items: flex-start;
+        padding-bottom: 0px;
     }
     .logo{
         width: 200px;

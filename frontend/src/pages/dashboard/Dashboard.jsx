@@ -24,16 +24,26 @@ export const Dashboard = () => {
   return (
     <>
     <Navbar />
-    <div style={{width:"95%", margin:"auto"}}>
+    <div className={style.dashboard}>
       <h1>Learn programming skills</h1>
-      <h1>Your Preparation</h1>
-      <div>
-        <Link to="#skills">
-          <p>NEW SKILL</p>
-          <h2>Add your first skill</h2>
-          <p>Explore and add your first skill to get started. HackerRank offers a variety of skills, tracks and tutorials for you to learn and improve.</p>
-          <button>Explore Skills</button>
-        </Link>
+      <h2>Your Preparation</h2>
+      <div className={style.container}>
+        <div className={style.skills}>
+          <Link to="#interview" className={style.skill}>
+            <p>PREPARATION KITS</p>
+            <h2>Interview Preparation Kit</h2>
+            <p>Get interview ready for top companies by solving an interview preparation kit.</p>
+            <button style={{backgroundColor:"green", color:"white"}}>View all kits</button>
+          </Link>
+        </div>
+        <div className={style.skills}>
+          <Link to="#skills" className={style.skill}>
+            <p>NEW SKILL</p>
+            <h2>Add your first skill</h2>
+            <p>Explore and add your first skill to get started. HackerRank offers a variety of skills, tracks and tutorials for you to learn and improve.</p>
+            <button>Explore Skills</button>
+          </Link>
+        </div>
       </div>
       <div>
         <h2>Prepare By Topics</h2>
