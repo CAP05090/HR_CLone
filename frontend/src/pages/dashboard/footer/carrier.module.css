@@ -1,0 +1,103 @@
+.carrier{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.carrier>div, .carrier>img{
+    width: 50%;
+    margin: auto 20px;
+}
+.carrier>div>h1{
+    font-size: 56px;
+    font-weight: 500;
+    margin: 10px;
+}
+.carrier>div>p{
+    margin: 10px;
+}
+.carrier>div>h2{
+    font-size: 36px;
+    font-weight: 500;
+    margin: 10px;
+}
+.remotecomp{
+    width: 95%;
+    margin: auto;
+}
+.remotecomp>h1{
+    margin: 20px auto;
+    font-size: 36px;
+    text-align: center;
+    font-weight: 500;
+    color: rgb(134, 133, 133);
+}
+.remotecomp>p{
+    margin: 20px auto;
+    font-size: 21px;
+    text-align: center;
+    color: rgb(133, 131, 131);
+}
+.remotecomp>div{
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+}
+.card{
+    margin: 10px;
+    padding: 10px;
+}
+.card>img{
+    display: block;
+    margin: auto;
+}
+.card>h3{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+.card>p{
+    font-size: 16px;
+    text-align: center;
+}
+
+
+@media (min-width:520px) and (max-width:750px) {
+    .carrier{
+        padding-left: 50px;
+        flex-direction: column;
+    }
+    .carrier>div, .carrier>img{
+        width: 100%;
+        margin: 20px auto;
+    }
+    .carrier>div>h1, .carrier>div>h2, .carrier>div>p{
+        margin: 10px 20px;
+    }
+    .remotecomp>div{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .remotecomp>h1{
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width:520px) {
+    .carrier{
+        flex-direction: column;
+    }
+    .carrier>div, .carrier>img{
+        width: 100%;
+        margin: 20px auto;
+    }
+    .carrier>div>h1, .carrier>div>h2, .carrier>div>p{
+        margin: 10x 20px;
+    }
+    .remotecomp>div{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .remotecomp>h1{
+        font-size: 28px;
+    }
+}
