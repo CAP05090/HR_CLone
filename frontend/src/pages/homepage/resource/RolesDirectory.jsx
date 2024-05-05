@@ -17,7 +17,7 @@ export const RolesDirectory = () => {
       <div id={style.lnk}>
         <Link className={style.lnk} to="#roles"><h3>9</h3><p>Job Families</p></Link>
         <Link className={style.lnk} to="#roles"><h3>77</h3><p>Roles</p></Link>
-        <Link className={style.lnk} to="/skill-directory"><h3>258</h3><p>Skills</p></Link>
+        <Link className={style.lnk} to="/skills-directory"><h3>258</h3><p>Skills</p></Link>
       </div>
     </div>
     <img src="" alt="" />
