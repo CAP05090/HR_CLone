@@ -4,6 +4,7 @@
     padding: 50px 80px;
 }
 .skillsDirectory>.ctfs{
+    text-decoration: underline;
     display: flex;
     justify-content: flex-end;
 }

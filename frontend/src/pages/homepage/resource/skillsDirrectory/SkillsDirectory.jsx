@@ -6,7 +6,7 @@ import { Footer } from '../../../../components/dashboard/Footer/Footer';
 
 export const SkillsDirectory = () => {
     let skills = [
-        { title: ".NET", logo: "https://hr-assets.s3.amazonaws.com/skills-directory/dotNet.svg", levels: ["Basic", "Intermediate", "Advanced"] },
+        { title: "NET", logo: "https://hr-assets.s3.amazonaws.com/skills-directory/dotNet.svg", levels: ["Basic", "Intermediate", "Advanced"] },
         { title: "Applied Math", logo: "https://hr-assets.s3.amazonaws.com/skills-directory/AppliedMath.svg", levels: ["View Skills Info"] },
         { title: "AWS", logo: "https://hr-assets.s3.amazonaws.com/skills-directory/AWS.svg", levels: ["Basic", "Intermediate"] }
     ];
@@ -29,7 +29,7 @@ export const SkillsDirectory = () => {
                         </div>
                         <div className={style.skillLevels}>
                             {item.levels.map((level, index) => (
-                                <Link key={index} className={style.link}>{level}</Link>
+                                <Link key={index} className={style.link} to={item.levels.length>1 ? `${item.title.toLowerCase()}_${level.toLocaleLowerCase()}` : `${item.title}`}>{level}</Link>
                             ))}
                         </div>
                     </div>
