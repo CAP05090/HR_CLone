@@ -3,6 +3,7 @@ const dotenv = require("dotenv").config()
 const swaggerjsdoc = require("swagger-jsdoc")
 const swaggerui = require("swagger-ui-express")
 const cors = require("cors")
+const cookieParser = require("cookie-parser")
 
 const { connection } = require("./configs/db")
 const { limiter } = require("./middlewares/Limiter.Middleware")
@@ -18,6 +19,7 @@ app.use(express.json())
 app.use(errorHandle)
 app.use(limiter)
 app.use(cors({origin:"*"}))
+app.use(cookieParser())
 
 // Routes
 app.use("/users", userRouter)
