@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import axios from "axios"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import style from "./login.module.css"
 import { AuthContext } from '../../Context/authContext'
 
@@ -9,6 +9,7 @@ export const Login = () => {
   const [password, setPassword] = useState("")
   const [token, setToken] = useState("")
   const {setLogin} = useContext(AuthContext)
+  const navigate = useNavigate()
   const userData = {email, password}
 
   const handleLogin = async(e)=>{
@@ -19,7 +20,11 @@ export const Login = () => {
         setLogin(true)
         setToken(token)
       }
+      alert(res.data.msg)
       console.log(res.data)
+      localStorage.setItem("AccessToken", res.data.AccessToken)
+      localStorage.setItem("RefreshToken", res.data.RefreshToken)
+      navigate("/dashboard")
     } catch (error) {
       console.log(error.message)
     }

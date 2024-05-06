@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from "axios"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import style from "./signup.module.css"
 
 export const Signup = () => {
@@ -9,6 +9,7 @@ export const Signup = () => {
   const [password, setPassword] = useState("")
   const [education, setEducation] = useState("")
   const [stream, setStream] = useState("")
+  const navigate = useNavigate()
 
   const handleSubmit = async(e)=>{
     e.preventDefault()
@@ -20,6 +21,7 @@ export const Signup = () => {
       let res = await axios.post("http://localhost:8080/users/register", userData)
       console.log(res)
       alert(res.data)
+      navigate("/dashboard")
     } catch (error) {
       console.log(error.message)
     }
