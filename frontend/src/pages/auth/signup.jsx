@@ -19,8 +19,10 @@ export const Signup = () => {
     try {
       const userData = {name, email, password, education, stream}
       let res = await axios.post("http://localhost:8080/users/register", userData)
-      console.log(res)
-      alert(res.data)
+      console.log(res.data)
+      alert(res.data.msg)
+      localStorage.setItem({"AccessToken": res.data.AccessToken})
+      localStorage.setItem({"RefreshToken": res.data.RefreshToken})
       navigate("/dashboard")
     } catch (error) {
       console.log(error.message)

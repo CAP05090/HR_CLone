@@ -103,15 +103,31 @@
 }
 .roles>div{
     /* border: 1px solid grey; */
-    margin: 20px;
+    margin: 20px 0px;
 }
 .roles>div>h2{
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
 }
 hr.hr{
     border-top: 1px solid dimgray;
 }
+.roles>div>div{
+    display: grid;
+}
+.roles .links{
+    font-size: 14px;
+    font-weight: 450;
+    margin: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+.roles .links:hover {
+    text-decoration: underline;
+    color: #555;
+}
+
 @media screen and (max-width:700px) {
     .role{
         flex-direction: column;
