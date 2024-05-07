@@ -84,7 +84,9 @@ userRouter.post("/register", async(req, res)=>{
                     } else{
                         let user = new UserModel({name, password: hash, email, education, stream})
                         await user.save()
-                        res.status(200).send("User Registered Successfully")
+                        const Atoken = jwt.sign({userId: user._id, email: user.email}, process.env.AccessKey, {expiresIn:"24h"})
+                        const Rtoken = jwt.sign({userId: user._id, email: user.email}, process.env.RefreshKey, {expiresIn:"7d"})
+                        res.status(200).send({msg:"Signup SuccessFully", AccessToken: Atoken, RefreshToken: Rtoken})
                     }
                 })
             } else{
