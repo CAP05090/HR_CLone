@@ -24,15 +24,13 @@ export const Navbar = () => {
   return (
     <>
       <div className={style.navbar}>
-        <div>
-          <Link to="/"><img className={style.logo} src='https://www.hackerrank.com/wp-content/uploads/2018/08/hackerrank_logo.png' alt='HackerRank Logo' /></Link>
-        </div>
+        <Link to="/"><img className={style.logo} src='https://www.hackerrank.com/wp-content/uploads/2018/08/hackerrank_logo.png' alt='HackerRank Logo' /></Link>
         <div className={style.menu}>
           <img
             className={style.menubtn}
             src={menu
-              ? "https://cdn-icons-png.flaticon.com/128/2099/2099192.png"
-              : "https://cdn-icons-png.flaticon.com/128/2976/2976286.png"
+              ? "https://cdn-icons-png.flaticon.com/128/2516/2516745.png"
+              : "https://cdn-icons-png.flaticon.com/128/2961/2961937.png"
             }
             alt={menu ? "Menu" : "Close Menu"}
             onClick={() => setMenu(!menu)} />
