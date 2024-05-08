@@ -21,41 +21,41 @@
     --> Mobilize Your Internal Talent
     --> Embrace AI
 
-### Resources
+#### Resources
     --> Roles Directory
     --> Integration
     --> What's New
 
-### Contact Us
+#### Contact Us
 
-### Authentatication
+#### Authentatication
     --> Login
     --> Sign up
 
-## Footer
+### Footer
 
-### Products
+#### Products
     --> Screen
     --> Real World Questions
 
-### Solutions
+#### Solutions
     --> Set Up a Skills Strategy
     --> Showcase Your Talent Brand
     --> Mobilize Your Internal Talent
     --> Embrace AI
 
-### Resources
+#### Resources
     --> Roles Directory
     --> Integrations
     --> What's New
 
-### About Us
+#### About Us
     --> Careers
     --> Newsroom
     --> Status
     --> Trust
 
-### Get Started
+#### Get Started
     --> Contact Us
     --> For Developers
 
