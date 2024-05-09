@@ -1,44 +1,53 @@
-const { SkillsModel } = require("../models/SkillsModel")
+const { SkillsModel } = require("../models/SkillsModel");
+const skillRouter = require("express").Router();
 
-const skillRouter = require("express").Router()
-
-skillRouter.get("/", async(req, res)=>{
+// Retrieve all skills
+skillRouter.get("/", async (req, res) => {
     try {
-        const skills = await SkillsModel.find()
-        res.send({"skills": skills})
+        const skills = await SkillsModel.find();
+        res.send({ skills });
     } catch (error) {
-        res.send({"msg": error.message})
+        res.status(500).send({ msg: error.message });
     }
-})
+});
 
-skillRouter.post("/create", async(req, res)=>{
+// Create a new skill
+skillRouter.post("/create", async (req, res) => {
+    const { title, skillslevel, description, keycompetencies } = req.body;
     try {
-        let skill = new SkillsModel(req.body)
-        await skill.save()
-        res.send({"msg":"Skills Data is added Successfully"})
+        const existingSkill = await SkillsModel.findOne({ title, skillslevel });
+        if (existingSkill) {
+            res.status(400).send({ msg: `Skill '${existingSkill.title} ${existingSkill.skillslevel}' already exists. You can update or delete it.` });
+        } else {
+            const skill = new SkillsModel({ title, skillslevel, description, keycompetencies });
+            await skill.save();
+            res.status(201).send({ msg: "Skill data added successfully" });
+        }
     } catch (error) {
-        res.send({"msg":error.message})
+        res.status(500).send({ msg: error.message });
     }
-})
+});
 
-skillRouter.patch("/update/:skillId", async(req, res)=>{
-    const {skillId} = req.params
+// Update an existing skill
+skillRouter.patch("/update/:skillId", async (req, res) => {
+    const { skillId } = req.params;
     try {
-        await SkillsModel.findByIdAndUpdate({_id:skillId}, req.body)
-        res.send({"msg":`Skill Id ${skillId} has been updated`})
+        await SkillsModel.findByIdAndUpdate(skillId, req.body);
+        res.send({ msg: `Skill with ID '${skillId}' has been updated` });
     } catch (error) {
-        res.send({"msg":error.message})
+        res.status(500).send({ msg: error.message });
     }
-})
+});
 
-skillRouter.delete("/delete/:skillId", async(req, res)=>{
-    const {skillId} = req.params
+// Delete an existing skill
+skillRouter.delete("/delete/:skillId", async (req, res) => {
+    const { skillId } = req.params;
     try {
-        await SkillsModel.findByIdAndDelete({_id:skillId})
-        res.send({"msg":`Skill Id ${skillId} has been Deleted`})
+        await SkillsModel.findByIdAndDelete(skillId);
+        res.send({ msg: `Skill with ID '${skillId}' has been deleted` });
     } catch (error) {
-        res.send({"msg":error.message})
+        res.status(500).send({ msg: error.message });
     }
-})
+});
 
-module.exports = {skillRouter}
+module.exports = { skillRouter };
