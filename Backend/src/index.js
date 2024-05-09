@@ -10,6 +10,8 @@ const { limiter } = require("./middlewares/Limiter.Middleware")
 const { errorHandle } = require("./middlewares/errorHandling.middleware")
 const { userRouter } = require("./routes/userRoutes")
 const { questionRouter } = require("./routes/questionsRoute")
+const rolesRouter = require("./routes/rolesRoute")
+const { skillRouter } = require("./routes/skillRoute")
 
 const app = express()
 const PORT = process.env.PORT
@@ -24,6 +26,8 @@ app.use(cookieParser())
 // Routes
 app.use("/users", userRouter)
 app.use("/challenge", questionRouter)
+app.use("/roles", rolesRouter)
+app.use("/skills", skillRouter)
 
 // Swagger-Docs
 const options = {

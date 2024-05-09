@@ -24,6 +24,7 @@ questionRouter.get("/", async(req, res)=>{
 
 // Update Question
 questionRouter.patch("/update/:questionId", async(req, res)=>{
+    const {questionId} = req.params
     try {
         await QuestionModel.findByIdAndUpdate({_id:questionId}, req.body)
         res.status(200).send(`question has been updated of id ${questionId}`)
@@ -34,8 +35,9 @@ questionRouter.patch("/update/:questionId", async(req, res)=>{
 
 // Delete Question
 questionRouter.delete("/delete/:questionId", async(req, res)=>{
+    const {questionId} = req.params
     try {
-        await QuestionModel.findByIdAndDelete({_id:questionId}, req.body)
+        await QuestionModel.findByIdAndDelete({_id:questionId})
         res.status(200).send(`question has been deleted of id ${questionId}`)
     } catch (error) {
         res.send(error.message)
