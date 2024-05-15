@@ -1,6 +1,16 @@
 const QuestionModel = require("../models/QuestionModel")
 const questionRouter = require("express").Router()
 
+//Read Question
+questionRouter.get("/", async(req, res)=>{
+    try {
+        const question = await QuestionModel.find()
+        res.send(question)
+    } catch (error) {
+        res.status(400).send(error.message)
+    }
+})
+
 // Added Question
 questionRouter.post("/add", async(req, res)=>{
     try {
@@ -9,16 +19,6 @@ questionRouter.post("/add", async(req, res)=>{
         res.status(200).send({"msg":"Question Added to Database"})
     } catch (error) {
         res.send(error.message)
-    }
-})
-
-//Read Question
-questionRouter.get("/", async(req, res)=>{
-    try {
-        const question = await QuestionModel.find()
-        res.send(question)
-    } catch (error) {
-        res.status(400).send(error.message)
     }
 })
 

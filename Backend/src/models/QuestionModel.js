@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const questionSchema = mongoose.Schema({
-    topics: { type: String, required: true },
+    status:{type:String, required: true},
     skills: { type: String, required: true },
     difficulty: { type: String, required: true },
     subDomain: { type: String, required: true },
@@ -12,10 +12,10 @@ const questionSchema = mongoose.Schema({
     print: { type: String },
     inputFormat: [{ type: String }],
     constraints: [{ type: String }],
-    outputFormat: { type: String },
-    sampleInput: { type: [String], required: true },
-    sampleOutput: { type: String, required: true },
-    explanation: { type: [String], required: true },
+    outputFormat: [{ type: String }],
+    sampleInput: {type: [String]},
+    sampleOutput: [{type: String}],
+    explanation: { type: [String]},
     hints: { type: String }
 }, { versionKey: false });
 
