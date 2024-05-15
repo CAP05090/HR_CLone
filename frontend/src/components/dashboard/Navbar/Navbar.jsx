@@ -28,7 +28,7 @@ export const Navbar = () => {
         />
         <ul className={`${style.menuItems} ${menu && style.menu}`} onClick={() => setMenu(false)}>
           <li className={style.container}>
-            <Link className={style.link} to="/prepare">Prepare</Link>
+            <Link className={style.link} to="/dashboard">Prepare</Link>
             <Link className={style.link} to="/skills-verification">Certify</Link>
             <Link className={style.link} to="/contest">Contests</Link>
           </li>

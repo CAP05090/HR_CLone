@@ -1,0 +1,83 @@
+.algorithm{
+    width: 99%;
+    margin: auto;
+    display: flex;
+}
+.container{
+    margin-right: 10px;
+    width: 75%;
+}
+.filtergroup{
+    margin: 40px 0px 0px 10px;
+    width: 25%;
+}
+.filter{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.filter>h3{
+    font-size: 18px;
+    font-weight: 450;
+    margin: 10px auto 5px;
+}
+.filter>button{
+    margin: 10px 0px;
+    display: flex;
+}
+.filter>button>p{
+    margin: auto 10px;
+}
+input.checkbox{
+    width: 20px;
+    height: 20px;
+}
+
+.container{
+    padding: 40px 0px;
+}
+.question{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    border: 1px solid rgb(209, 207, 207);
+    padding: 20px 5px;
+    margin: 10px auto;
+}
+.properties h1{
+    font-size: 22px;
+    font-weight: 480;
+}
+.properties div{
+    margin: 10px 0px;
+    font-size: 13px;
+}
+.question>.link{
+    justify-content: space-between;
+    display: flex;
+}
+.link>button{
+    margin: auto 10px;
+    height: 35px;
+    padding: 0px 5px;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 450;
+    border: 1px solid rgb(138, 138, 11);
+}
+
+@media screen and (max-width:700px) {
+    .algorithm{
+        flex-direction: column;
+    }
+    .container, .filtergroup{
+        width: 100%;
+        margin: 0px;
+    }
+    .question>.link{
+        flex-direction: column;
+    }
+    .link>button{
+        padding: 5px 0px;
+    }
+}

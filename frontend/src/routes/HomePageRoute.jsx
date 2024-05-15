@@ -14,7 +14,6 @@ export const HomePageRoute = () => {
         <Route path="#interview" element={<Interview />} />
         <Route path='/contact-us' element={<Contact />} />
         <Route path='/privacy' element={<PrivacyPolicy />} />
-
     </Routes>
   )
 }

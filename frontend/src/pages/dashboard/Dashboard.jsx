@@ -18,7 +18,7 @@ export const Dashboard = () => {
     {logo:"https://img.icons8.com/?size=96&id=13406&format=png", to:"/domains/sql", displayText:"SQL"},
     {logo:"https://img.icons8.com/?size=96&id=KZHjwwenS7oK&format=png", to:"/domains/database", displayText:"Database"},
     {logo:"https://image.shutterstock.com/image-vector/unix-code-icon-260nw-762484363.jpg", to:"/domains/linux-shell", displayText:"Linux Shell"},
-    {logo:"https://cdn-icons-png.flaticon.com/128/2758/2758656.png", to:"/domains/finctional-programming", displayText:"Functional Programming"},
+    {logo:"https://cdn-icons-png.flaticon.com/128/2758/2758656.png", to:"/domains/functional-programming", displayText:"Functional Programming"},
     {logo:"https://th.bing.com/th/id/OIG4.oplqPCOJuEs.FFzQCDkQ?w=270&h=270&c=6&r=0&o=5&dpr=1.5&pid=ImgGn", to:"/domains/regex", displayText:"Regex"},
   ]
   return (
@@ -45,15 +45,17 @@ export const Dashboard = () => {
           </Link>
         </div>
       </div>
-      <div>
+      <div id='skills'>
         <h2>Prepare By Topics</h2>
-        <div className={style.topics}>{
+        <div className={style.topics}>
+          {
           topics.map((link, id)=>(
             <Link className={style.topic} key={id} to={link.to}>
               <img className={style.tlogo} src={link.logo} alt={link.displayText} />
               {link.displayText}</Link>
           ))
-        }</div>
+          }
+        </div>
       </div>
     </div>
     <Footer />

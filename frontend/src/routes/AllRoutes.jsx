@@ -9,7 +9,8 @@ import { ResourseRoute } from './ResourseRoute'
 import { HomePageRoute } from './HomePageRoute'
 import { AuthRoute } from './AuthRoute'
 import { ProductRoute } from './ProductRoute'
-import { DashboardTopicsRoute } from './DashboardTopicsRoute'
+import { DomainRoute } from './DomainRoute'
+import { ChallengeRoute } from './challengeRoute'
 
 export const AllRoutes = () => {
   return (
@@ -25,7 +26,8 @@ export const AllRoutes = () => {
         <ResourseRoute />
         <DashboardFooterRoute />
         <DashboardNavbar />
-        <DashboardTopicsRoute />
+        <DomainRoute />
+        <ChallengeRoute />
     </BrowserRouter>
   )
 }
