@@ -3,7 +3,7 @@ import axios from "axios";
 import { Navbar } from '../../components/dashboard/Navbar/Navbar';
 import { Footer } from '../../components/dashboard/Footer/Footer';
 import style from "./domains.module.css";
-import { AIFilter } from './filter/AIfilter';
+import { CFilter } from './filter/Cfilter';
 
 export const C = () => {
   
@@ -32,7 +32,7 @@ return (
     <h2 id={style.domain}>C Programming</h2>
     <div className={style.data}>
       {loading && <p>Loading...</p>}
-      {data && <AIFilter data={data} />}
+      {data && <CFilter data={data} />}
     </div>
     <Footer />
     </>
