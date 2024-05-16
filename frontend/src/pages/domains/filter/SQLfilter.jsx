@@ -14,7 +14,7 @@ export const SQLfilter = ({ data }) => {
       'Graph Theory': false,
       'Algorithm': false,
       'Algorithms': false,
-    }
+    } 
   });
 
   const handleFilterChange = (type, filter) => {
