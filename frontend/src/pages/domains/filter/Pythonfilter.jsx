@@ -4,16 +4,16 @@ import style from './filter.module.css';
 
 export const PythonFilter = ({ data }) => {
   const [filters, setFilters] = useState({
-    status: { Solved: false, Unsolved: false },
-    skill: { Basic: false, Intermediate: false, Advanced: false },
-    difficulty: { Easy: false, Medium: false, Hard: false },
+    status: { "Solved": false, "Unsolved": false },
+    skill: { "Basic": false, "Intermediate": false, "Advanced": false },
+    difficulty: { "Easy": false, "Medium": false, "Hard": false },
     subDomain: {
       'Dynamic Programming': false,
-      Sorting: false,
+      "Sorting": false,
       'String Manipulation': false,
       'Graph Theory': false,
-      Algorithm: false,
-      Algorithms: false,
+      "Algorithm": false,
+      "Algorithms": false,
     }
   });
 
@@ -42,7 +42,7 @@ export const PythonFilter = ({ data }) => {
         <ul className={style.questions}>
           {filteredData.map((item, index) => (
             <li key={index} className={style.question}>
-              <Link to={`/details/${item.id}`} className={style.link}>
+              <Link to={`/challenges/${item.title.toLowerCase()}`} className={style.link}>
                 <div className={style.properties}>
                   <h1>{item.title}</h1>
                   <div>
