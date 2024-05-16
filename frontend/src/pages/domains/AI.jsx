@@ -29,7 +29,7 @@ export const ArtificialIntellegence = () => {
 return (
     <>
     <Navbar />
-    <h2 id={style.domain}>Algorithms</h2>
+    <h2 id={style.domain}>Artificial Intellegence</h2>
     <div className={style.data}>
       {loading && <p>Loading...</p>}
       {data && <AIFilter data={data} />}

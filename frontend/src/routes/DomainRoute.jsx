@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Algorithms } from '../pages/domains/Algorithms'
 import  {DataStructure} from "../pages/domains/DataStructure"
 import  {Mathematics} from "../pages/domains/Mathematics"
-import { AI } from '../pages/domains/AI'
+import { ArtificialIntellegence } from '../pages/domains/AI'
 import { C } from '../pages/domains/C'
 import { Cpp } from '../pages/domains/Cpp'
 import { Java } from '../pages/domains/Java'
@@ -21,7 +21,7 @@ export const DomainRoute = () => {
         <Route path='/domains/algorithms' element={<Algorithms />} />
         <Route path='/domains/data-structures' element={<DataStructure />} />
         <Route path='/domains/mathematics' element={<Mathematics />} />
-        <Route path='/domains/ai' element={<AI />} />
+        <Route path='/domains/ai' element={<ArtificialIntellegence />} />
         <Route path='/domains/c' element={<C />} />
         <Route path='/domains/cpp' element={<Cpp />} />
         <Route path='/domains/java' element={<Java />} />
