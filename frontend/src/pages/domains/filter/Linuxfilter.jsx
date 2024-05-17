@@ -42,7 +42,7 @@ export const Linuxfilter = ({ data }) => {
         <ul className={style.questions}>
           {filteredData.map((item, index) => (
             <li key={index} className={style.question}>
-              <Link to={`/challenges/${item.title.toLowerCase()}`} className={style.link}>
+              <Link to={`/challenges/${item.title.toLowerCase().split(" ").join("-")}`} className={style.link}>
                 <div className={style.properties}>
                   <h1>{item.title}</h1>
                   <div>
