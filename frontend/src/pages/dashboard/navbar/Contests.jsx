@@ -3,6 +3,7 @@ import { Navbar } from '../../../components/dashboard/Navbar/Navbar'
 import { Footer } from '../../../components/dashboard/Footer/Footer'
 import { ContestFilter } from './contest/ContestFilter'
 import style from "./contests.module.css"
+import { Link } from 'react-router-dom'
 
 export const Contests = () => {
   
@@ -54,6 +55,9 @@ export const Contests = () => {
     <div className={style.contests}>
       {loading && <p>Loading...</p>}
       {contest && <ContestFilter data={contest} />}
+    </div>
+    <div className={style.archivedcontest}>
+      <Link to="/contests/archived">Show More Archived Contests</Link>
     </div>
     <Footer />
     </>
