@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from "react-router-dom"
 import { Navbar } from '../../../components/dashboard/Navbar/Navbar'
 import { Footer } from '../../../components/dashboard/Footer/Footer'
+import style from "./certify.module.css"
 
 export const Certify = () => {
   let roles = [
@@ -35,11 +36,11 @@ export const Certify = () => {
   return (
     <>
     <Navbar />
-    <div>
+    <div className={style.head}>
       <p>Certification Tests</p>
       <h1>Get Certified</h1>
     </div>
-    <div>
+    <div className={style.container}>
       <div>
         <h2>Stand out from the crowd</h2>
         <p>Get certified in technical skills by taking the HackerRank Certification Test</p>
@@ -53,14 +54,30 @@ export const Certify = () => {
         <p>Upon successfully clearing an assessment, you can promote yourself using the HackerRank certificate to peers and employers</p>
       </div>
     </div>
-    <h2>Get Your Roles Certified</h2>
-    <div>
+    <h2 id={style.roles}>Get Your Roles Certified</h2>
+    <div className={style.roles}>
       {roles.map((item, id)=>(
-        <Link to={item.to} key={id}></Link>
+        <Link to={item.to} key={id} className={style.role}>
+          <div>
+            <h1>{item.displayText}</h1>
+            <img src="https://th.bing.com/th?q=Tooltip+Help+Icon&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.5&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247" alt="tooltip help icon" />
+          </div>
+          <button>Get Certified</button>
+        </Link>
       ))}
     </div>
-    <h2>Get Your Skills Certified</h2>
-    <div></div>
+    <h2 id={style.roles}>Get Your Skills Certified</h2>
+    <div className={style.roles}>
+      {skills.map((item, id)=>(
+        <Link to={item.to} key={id} className={style.role}>
+          <div>
+            <h1>{item.displayText}</h1>
+            <img src="https://th.bing.com/th?q=Tooltip+Help+Icon&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.5&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247" alt="tooltip help icon" />
+          </div>
+          <button>Get Certified</button>
+        </Link>
+      ))}
+    </div>
     <Footer />
     </>
   )

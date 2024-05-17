@@ -1,0 +1,86 @@
+.head{
+    width: 95%;
+    margin: auto;
+    padding: 20px 0px;
+}
+
+.head>p{
+    color: rgb(243, 214, 180);
+    font-size: 14px;
+}
+.head>h1{
+    font-size: 26px;
+    font-weight: 500;
+}
+.container{
+    display: flex;
+    border: 1px solid;
+    padding: 20px;
+    background-color: #2056da;
+    color: white;
+}
+.container>div{
+    width: 33%;
+    margin: 20px;
+}
+.container>div>h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+.container>div>p{
+    font-size: 13px;
+}
+#roles{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px;
+}
+.roles{
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    justify-content: space-between;
+}
+.role{
+    padding: 25px;
+    margin: 20px ;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.role>div{
+    display: flex;
+}
+.role>div>h1{
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: 500;
+}
+.role>div>img{
+    display: block;
+    margin: 5px 10px;
+    width: 30px;
+    height: 30px;
+}
+.role>button{
+    margin-top: 30px;
+    border: 1px solid dimgrey;
+    border-radius: 7px;
+    padding: 5px 10px;
+}
+
+
+@media screen and (max-width:700px) {
+    .head>p{
+        display: none;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .container>div{
+        margin: 20px auto;
+        width: 100%;
+    }
+    .roles{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
