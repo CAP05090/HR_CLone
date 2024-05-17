@@ -1,0 +1,22 @@
+#head{
+    margin: 24px;
+}
+#head>p{
+    font-size: 13px;
+    color: dimgray;
+}
+#head>h1{
+    font-size: 22px;
+    font-weight: 500;
+}
+#contest{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px;
+}
+
+@media screen and (max-width:700px) {
+    #head>p{
+        display: none;
+    }
+}
