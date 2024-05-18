@@ -1,0 +1,59 @@
+#admin{
+    font-size: 28px;
+    font-weight: 500;
+    margin: 20px;
+}
+.admin{
+    margin: auto 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.admin>div{
+    margin: auto 0px;
+}
+.link{
+    padding: 10px 10px;
+}
+.search{
+    border: 1px solid;
+    display: flex;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+.admin>div>img{
+    display: block;
+    width: 25px;
+    height: 25px;
+}
+.lnk{
+    color: blue;
+}
+.contest{
+    justify-content: space-between;
+    display: flex;
+    margin: 20px;
+}
+.contestcreate{
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgb(0, 150, 0);
+    font-weight: 500;
+    color: white;
+    border: 1px solid;
+}
+.contests{
+    border: 1px solid rgb(167, 167, 167);
+    margin: 20px 20px 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width:700px) {
+    .contest{
+        flex-direction: column;
+    }
+    .contestcreate{
+        margin: 20px 0px;
+    }
+}
