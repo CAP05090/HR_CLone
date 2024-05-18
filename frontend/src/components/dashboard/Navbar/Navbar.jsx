@@ -20,8 +20,8 @@ export const Navbar = () => {
         <img
           className={style.menubtn}
           src={menu 
-            ? "https://cdn-icons-png.flaticon.com/128/2099/2099192.png"
-            : "https://cdn-icons-png.flaticon.com/128/2976/2976286.png" 
+            ? "https://img.icons8.com/?size=100&id=120374&format=png"
+            :  "https://img.icons8.com/?size=100&id=46&format=png"
             }
           alt={menu ? "closeMenu" : "menu"}
           onClick={toggleMenu}
