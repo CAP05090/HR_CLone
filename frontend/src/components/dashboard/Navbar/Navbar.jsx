@@ -35,13 +35,13 @@ export const Navbar = () => {
             <Link className={style.link} to="/contest">Contests</Link>
           </li>
           {login ? (
-            <div>
+            <li>
               <Link to="/users">Profile</Link>
               <Link to="/leaderboard">leaderboard</Link>
               <Link to="/bookmarks">Bookmarks</Link>
               <Link to="/setting">Settings</Link>
               <button onClick={logoutHandler}>Logout</button>
-            </div>
+            </li>
           ): (
             <li>
               <div className={style.searchContainer}>
