@@ -25,9 +25,6 @@
     gap:47px;
     list-style: none;
 }
-.container{
-
-}
 .menuItems>li{
     display: flex;
 }
