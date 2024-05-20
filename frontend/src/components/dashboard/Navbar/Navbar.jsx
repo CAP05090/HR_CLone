@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import style from './Navbar.module.css';
+import { AuthContext } from '../../../Context/authContext';
 
 export const Navbar = () => {
+  const {login, logoutHandler} = useContext(AuthContext)
   const [menu, setMenu] = useState(true);
 
   const toggleMenu = () => {
@@ -32,15 +34,26 @@ export const Navbar = () => {
             <Link className={style.link} to="/skills-verification">Certify</Link>
             <Link className={style.link} to="/contest">Contests</Link>
           </li>
-          <li>
-            <div className={style.searchContainer}>
-              <img className={style.searchIcon}
-                src="https://th.bing.com/th/id/OIP.1YYDJgEoM_aSw7Iu7voVsAHaHa?w=186&h=186&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="searchbar" />
-              <input className={style.searchInput} placeholder="Search" />
+          {login ? (
+            <div>
+              <Link to="/users">Profile</Link>
+              <Link to="/leaderboard">leaderboard</Link>
+              <Link to="/bookmarks">Bookmarks</Link>
+              <Link to="/setting">Settings</Link>
+              <button onClick={logoutHandler}>Logout</button>
             </div>
-            <Link className={style.auth} to="/auth/login">Login</Link>
-            <Link className={style.auth} to="/auth/signup">Signup</Link>
-          </li>
+          ): (
+            <li>
+              <div className={style.searchContainer}>
+                <img className={style.searchIcon}
+                  src="https://th.bing.com/th/id/OIP.1YYDJgEoM_aSw7Iu7voVsAHaHa?w=186&h=186&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="searchbar" />
+                <input className={style.searchInput} placeholder="Search" />
+              </div>
+              <Link className={style.auth} to="/auth/login">Login</Link>
+              <Link className={style.auth} to="/auth/signup">Signup</Link>
+            </li>
+          )}
+          
         </ul>
       </div>
     </div>
