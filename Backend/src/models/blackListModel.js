@@ -1,7 +1,8 @@
 const mongoose = require("mongoose")
 
-const blacklistSchema = mongoose.Schema({
-    token:{type: String, required: true}
+const blacklistSchema = new mongoose.Schema({
+    token: String,
+    date:{type:Date, default:Date.now}
 }, {
     versionKey: false
 })

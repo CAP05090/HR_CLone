@@ -145,7 +145,7 @@ userRouter.post("/login", async(req, res)=>{
         let user = await UserModel.findOne({email})
         if(user){
             bcrypt.compare(password, user.password, (err, result)=>{
-                if(err){
+                if(err || !result){
                     res.status(401).send("Incorrect Password")
                 } else{
                     const Atoken = jwt.sign({userId: user._id, email: user.email}, process.env.AccessKey, {expiresIn:"24h"})
@@ -227,7 +227,7 @@ userRouter.get("/refresh", (req, res)=>{
  *                  description: Something went wrong.
  */
 
-userRouter.get("/logout", async(req, res)=>{
+userRouter.post("/logout", async(req, res)=>{
     const token = req.headers.authorization?.split(" ")[1]
     try {
         const tokens = new BlackListModel({token: token, date: new Date()})
