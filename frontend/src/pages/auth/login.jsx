@@ -16,16 +16,18 @@ export const Login = () => {
     e.preventDefault();
     try {
       let res = await axios.post("http://localhost:8080/users/login", userData)
-      if (res.data.token){
+      let token = res.data.AccessToken
+      if (token){
         setLogin(true)
         setToken(token)
       }
       alert(res.data.msg)
       console.log(res.data)
-      localStorage.setItem("AccessToken", res.data.AccessToken)
+      localStorage.setItem("token", res.data.AccessToken)
       localStorage.setItem("RefreshToken", res.data.RefreshToken)
       navigate("/dashboard")
     } catch (error) {
+      alert("Entered Credential are Wrong")
       console.log(error.message)
     }
   }
