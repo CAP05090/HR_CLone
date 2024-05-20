@@ -79,3 +79,53 @@
     --> Careers
     --> Terms of Service
     --> Privacy Policy
+
+### Home Page
+    --> navbar
+    --> Main 
+    --> Footer
+
+## Products
+### Screen
+    --> navbar
+    --> Main 
+    --> Footer
+### Real World Problems
+    --> navbar
+    --> Main 
+    --> Footer
+## Solutions
+### Set Up a Skills Strategy
+    --> navbar
+    --> Main 
+    --> Footer
+### Showcase Your Talent Brand
+    --> navbar
+    --> Main 
+    --> Footer
+### Mobilize Your Internal Talent
+    --> navbar
+    --> Main 
+    --> Footer
+### Embrace AI
+    --> navbar
+    --> Footer
+## Resources
+### Roles Directory
+    --> navbar
+    --> Main 
+    --> Footer
+### Integration
+    --> navbar
+    --> Main 
+    --> Footer
+### What's New
+    --> navbar
+    --> Footer
+## Contact Us
+    --> navbar
+    --> Main 
+    --> Footer
+## Login
+
+## Sign up
