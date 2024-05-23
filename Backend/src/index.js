@@ -4,6 +4,7 @@ const swaggerjsdoc = require("swagger-jsdoc")
 const swaggerui = require("swagger-ui-express")
 const cors = require("cors")
 const cookieParser = require("cookie-parser")
+const bodyParser = require('body-parser');
 
 const { connection } = require("./configs/db")
 const { limiter } = require("./middlewares/Limiter.Middleware")
@@ -12,6 +13,7 @@ const { userRouter } = require("./routes/userRoutes")
 const { questionRouter } = require("./routes/questionsRoute")
 const rolesRouter = require("./routes/rolesRoute")
 const { skillRouter } = require("./routes/skillRoute")
+const editorRouter = require("./routes/challengeEditorRoute")
 
 const app = express()
 const PORT = process.env.PORT
@@ -22,12 +24,14 @@ app.use(errorHandle)
 app.use(limiter)
 app.use(cors({origin:"*"}))
 app.use(cookieParser())
+app.use(bodyParser.json())
 
 // Routes
 app.use("/users", userRouter)
 app.use("/challenge", questionRouter)
 app.use("/roles", rolesRouter)
 app.use("/skills", skillRouter)
+app.use("/challenge", editorRouter)
 
 // Swagger-Docs
 const options = {
