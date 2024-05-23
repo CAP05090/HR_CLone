@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import style from './Navbar.module.css';
-import { AuthContext } from '../../../Context/authContext';
+import { AuthContext } from '../../Context/authContext';
 
 export const Navbar = () => {
   const {login, logoutHandler} = useContext(AuthContext)
@@ -19,13 +19,11 @@ export const Navbar = () => {
         </Link>
       </div>
       <div className={style.menu}>
-        <img
-          className={style.menubtn}
+        <img className={style.menubtn}
           src={menu 
             ? "https://img.icons8.com/?size=100&id=120374&format=png"
             :  "https://img.icons8.com/?size=100&id=46&format=png"
-            }
-          alt={menu ? "closeMenu" : "menu"}
+            } alt={menu ? "closeMenu" : "menu"}
           onClick={toggleMenu}
         />
         <ul className={`${style.menuItems} ${menu && style.menu}`} onClick={() => setMenu(false)}>
@@ -34,14 +32,21 @@ export const Navbar = () => {
             <Link className={style.link} to="/skills-verification">Certify</Link>
             <Link className={style.link} to="/contest">Contests</Link>
           </li>
+          {login && (
+            <div className={style.inbox}>
+              <Link to="/inbox"className={style.ibx}><img src="https://img.icons8.com/?size=96&id=108791&format=png" alt="message" /></Link>
+              <Link to="/notifications" className={style.ibx}><img src="https://img.icons8.com/?size=96&id=z8yqcMdq4T2h&format=png" alt="notification" /></Link>
+            </div>
+          )}
           {login ? (
-            <li>
-              <Link to="/profile">Profile</Link>
-              <Link to="/leaderboard">leaderboard</Link>
-              <Link to="/challenges/bookmarks">Bookmarks</Link>
-              <Link to="/settings">Settings</Link>
-              <button onClick={logoutHandler}>Logout</button>
-            </li>
+            <li className={style.userlink}>
+              <hr />
+              <Link className={style.link} to="/profile">Profile</Link>
+              <Link className={style.link} to="/leaderboard">leaderboard</Link>
+              <Link className={style.link} to="/challenges/bookmarks">Bookmarks</Link>
+              <Link className={style.link} to="/settings">Settings</Link>
+            <button className={style.btn} onClick={logoutHandler}>Logout</button>
+          </li>
           ) : (
             <li>
               <div className={style.searchContainer}>
@@ -53,9 +58,12 @@ export const Navbar = () => {
               <Link className={style.auth} to="/auth/signup">Signup</Link>
             </li>
           )}
-
         </ul>
+      </div>
+      <div className={style.user}>
+        
       </div>
     </div>
   );
 };
+
