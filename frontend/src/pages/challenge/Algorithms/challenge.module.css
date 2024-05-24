@@ -1,0 +1,81 @@
+.challenge{
+    display: flex;
+    width: 99%;
+    margin: auto;
+}
+.question{
+    margin: 20px;
+    width: 50%;
+}
+.Editor{
+    padding: 2px;
+    width: 50%;
+    margin: 20px 0px;
+}
+.runEditor{
+    padding: 0px;
+    width: 200%;
+}
+.cont>h1{
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.cont>h2{
+    margin: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.cont>p{
+    margin: 10px;
+    font-size: 14px;
+    color: dimgrey;
+}
+.inpopt{
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgb(215, 249, 249);
+    columns: black;
+    width: 30%;
+}
+.themeLang{
+    display: flex;
+    justify-content: space-around;
+}
+.dropdown{
+    border: 1px solid dimgray;
+    padding: 10px;
+    border-radius: 7px;
+    margin: auto;
+}
+.editorSetting{
+    width: 25px;
+    display: block;
+    margin: auto 5px;
+}
+.run_opt{
+    display: flex;
+    justify-content: space-between;
+}
+
+.run_opt>div>button{
+    font-weight: 500;
+    width: max-content;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: 1px solid;
+    padding: 5px 10px;
+}
+
+@media screen and (max-width:700px) {
+    .challenge{
+        flex-direction: column;
+    }
+    .question, .Editor{
+        width: 100%;
+        margin: 20px auto;
+    }
+    .runEditor{
+        width: 100%;
+    }
+}
