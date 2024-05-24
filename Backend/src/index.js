@@ -31,7 +31,7 @@ app.use("/users", userRouter)
 app.use("/challenge", questionRouter)
 app.use("/roles", rolesRouter)
 app.use("/skills", skillRouter)
-app.use("/challenge", editorRouter)
+app.use("/challenges", editorRouter)
 
 // Swagger-Docs
 const options = {
