@@ -29,7 +29,7 @@ export const ReverseString = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false)
 
-    // get the code from database
+    // Fetch challenge data on component mount
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -45,7 +45,8 @@ export const ReverseString = () => {
         };
         fetchData();
     }, []);
-    // Run the code
+
+    // Handle code execution
     const handleRunCode = async () => {
         try {
             const result = await axios.post('http://localhost:8080/challenges/run', { code, language });
@@ -55,6 +56,25 @@ export const ReverseString = () => {
         }
     };
 
+    // Handle code submission
+    const handleSubmitCode = async () => {
+        try {
+            const result = await axios.post('http://localhost:8080/challenges/submit', {
+                code,
+                language,
+                challengeId: data?.id // assuming each challenge has a unique identifier
+            });
+            if (result.data.success) {
+                alert('Code submitted successfully!');
+            } else {
+                alert('Submission failed: ' + result.data.message);
+            }
+        } catch (error) {
+            alert(`Submission error: ${error.message}`);
+        }
+    };
+    
+    // Determine the editor mode based on the selected language
     const getMode = () => {
         switch (language) {
             case 'Python': return 'python';
@@ -148,7 +168,7 @@ export const ReverseString = () => {
                 </div>
                 <div>
                     <button onClick={handleRunCode}>Run Code</button>
-                    <button style={{color:"white", backgroundColor:"green"}}>Submit</button>
+                    <button onClick={handleSubmitCode} style={{color:"white", backgroundColor:"green"}}>Submit</button>
                 </div>
             </div>
         </div>
