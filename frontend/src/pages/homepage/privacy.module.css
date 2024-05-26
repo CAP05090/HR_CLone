@@ -1,5 +1,5 @@
 .heading{
-    margin: 20px;
+    margin: 20px 20px 20px 300px;
 }
 .heading>h1{
     font-size: 46px;
@@ -15,7 +15,7 @@
     margin: 10px auto;
 }
 .policy{
-    margin: 20px;
+    margin: 20px 20px 20px 300px;
 }
 .policy>h2{
     margin: 10px auto;
@@ -33,5 +33,10 @@
 }
 .policy>ul>li{
     margin-left: 20px;
-    font-size: 16px;
+    font-size: 18px;
+}
+@media screen and (max-width:700px) {
+    .heading, .policy{
+        margin: 20px;
+    }
 }
