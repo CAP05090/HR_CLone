@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AceEditor from "react-ace";
-import style from "./challenge.module.css"
+import style from "./challenge.module.css";
 
 // Import all necessary modes
 import "ace-builds/src-noconflict/mode-javascript";
@@ -24,10 +24,13 @@ export const ReverseString = () => {
 
     const [code, setCode] = useState('// write code here ...');
     const [language, setLanguage] = useState('Python');
-    const [theme, setTheme] = useState('twilight');
+    const [input, setInput] = useState("");
+    const [theme, setTheme] = useState('terminal');
     const [output, setOutput] = useState('');
     const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const [executing, setExecuting] = useState(false);
+    const [title, setTitle] = useState('Reverse a String');
 
     // Fetch challenge data on component mount
     useEffect(() => {
@@ -35,47 +38,60 @@ export const ReverseString = () => {
             try {
                 setLoading(true);
                 const response = await axios.get("http://localhost:8080/challenge");
-                setData(response.data);
+                const challenges = response.data;
+
+                // Filter challenges by title and set the specific challenge to state
+                const filteredChallenge = challenges.find(challenge => 
+                    challenge.title.toLowerCase() === title.toLowerCase()
+                );
+
+                setData(filteredChallenge);
                 setLoading(false);
-                console.log(response.data)
+                console.log(filteredChallenge);
             } catch (error) {
                 console.log(error.message);
                 setLoading(false);
             }
         };
         fetchData();
-    }, []);
+    }, [title]);
 
     // Handle code execution
     const handleRunCode = async () => {
+        setExecuting(true);
         try {
-            const result = await axios.post('http://localhost:8080/challenges/run', { code, language });
+            const result = await axios.post('http://localhost:8080/challenges/run', { code, language, stdin: input });
             setOutput(result.data.output || result.data.error);
         } catch (error) {
             setOutput(`Error: ${error.message}`);
+        } finally {
+            setExecuting(false);
         }
     };
 
     // Handle code submission
     const handleSubmitCode = async () => {
+        setExecuting(true);
         try {
             const result = await axios.post('http://localhost:8080/challenges/submit', {
                 code,
                 language,
-                challengeId: data?.id // assuming each challenge has a unique identifier
+                challengeId: data?._id // assuming each challenge has a unique identifier
             });
+            console.log(result.data);
             if (result.data.success) {
-                alert('Code submitted successfully!');
+                alert('Problem submitted successfully and passed all test cases!');
             } else {
                 alert('Submission failed: ' + result.data.message);
             }
         } catch (error) {
             alert(`Submission error: ${error.message}`);
+        } finally {
+            setExecuting(false);
         }
     };
-    
-    // Determine the editor mode based on the selected language
-    const getMode = () => {
+     // Determine the editor mode based on the selected language
+     const getMode = () => {
         switch (language) {
             case 'Python': return 'python';
             case 'C':
@@ -87,92 +103,96 @@ export const ReverseString = () => {
         }
     };
 
-  return (
-    <>
-    <div className={style.challenge}>
-        <div className={style.question}>
-            {loading && <h1>Loading...</h1>}
-            {data && data.map((item, id)=>(
-                item.title === "Reverse a String" && (
-                    <div key={id} className={style.cont}>
-                        <h1>{item.title}</h1>
-                        <p>{item.description}</p>
-                        <h2>Example</h2>
-                        <p>{item.example}</p>
-                        <h2>Function Description</h2>
-                        <p>{item.functionDescription}</p>
-                        <h2>Input Format</h2>
-                        <p>{item.inputFormat}</p>
-                        <h2>Constraints</h2>
-                        <p>{item.constraints}</p>
-                        <h2>Output Format</h2>
-                        <p>{item.outputFormat}</p>
-                        <h2>Sample Input</h2>
-                        <p className={style.inpopt} >{item.sampleInput}</p>
-                        <h2>Sample Output</h2>
-                        <p className={style.inpopt} >{item.sampleOutput}</p>
-                        <h2>Explanation</h2>
-                        <p>{item.explanation}</p>
-                        <h2>Hints</h2>
-                        <p>{item.hints}</p>
+    return (
+        <>
+            <div className={style.challenge}>
+                <div className={style.question}>
+                    {loading && <h1>Loading...</h1>}
+                    {data && (
+                        <div className={style.cont}>
+                            <h1>{data.title}</h1>
+                            <p>{data.description}</p>
+                            <h2>Example</h2>
+                            <p>{data.example}</p>
+                            <h2>Function Description</h2>
+                            <p>{data.functionDescription}</p>
+                            <h2>Input Format</h2>
+                            <p>{data.inputFormat}</p>
+                            <h2>Constraints</h2>
+                            <p>{data.constraints}</p>
+                            <h2>Output Format</h2>
+                            <p>{data.outputFormat}</p>
+                            <h2>Sample Input</h2>
+                            <p className={style.inpopt}>{data.sampleInput}</p>
+                            <h2>Sample Output</h2>
+                            <p className={style.inpopt}>{data.sampleOutput}</p>
+                            <h2>Explanation</h2>
+                            <p>{data.explanation}</p>
+                            <h2>Hints</h2>
+                            <p>{data.hints}</p>
+                        </div>
+                    )}
+                </div>
+                <div className={style.Editor}>
+                    <div className={style.themeLang}>
+                        <div className={style.theme}>
+                            <label htmlFor="theme-select" style={{ color: "blue" }}>Theme: </label>
+                            <select id="theme-select" value={theme} onChange={(e) => setTheme(e.target.value)} className={style.dropdown}>
+                                <option value="github">GitHub</option>
+                                <option value="monokai">Monokai</option>
+                                <option value="clouds">Clouds</option>
+                                <option value="twilight">Twilight</option>
+                                <option value="solarized_dark">Solarized Dark</option>
+                                <option value="solarized_light">Solarized Light</option>
+                                <option value="terminal">Terminal</option>
+                            </select>
+                        </div>
+                        <div className={style.language}>
+                            <label htmlFor="language-select">Language: </label>
+                            <select value={language} onChange={(e) => setLanguage(e.target.value)} className={style.dropdown}>
+                                <option value="python">Python</option>
+                                <option value="c">C</option>
+                                <option value="c_pp">C++</option>
+                                <option value="r">R</option>
+                                <option value="ruby">Ruby</option>
+                                <option value="javascript">JavaScript</option>
+                            </select>
+                        </div>
+                        <div className={style.editorSetting}>
+                            <button><img src="https://img.icons8.com/?size=48&id=89139&format=png" alt="editor setting" /></button>
+                        </div>
                     </div>
-                )
-            ))}
-        </div>
-        <div className={style.Editor}>
-            <div className={style.themeLang}>
-                <div className={style.theme}>
-                    <label htmlFor="theme-select" style={{color:"blue"}}>Theme: </label>
-                    <select id="theme-select" value={theme} onChange={(e) => setTheme(e.target.value)} className={style.dropdown}>
-                        <option value="github">GitHub</option>
-                        <option value="monokai">Monokai</option>
-                        <option value="clouds">Clouds</option>
-                        <option value="twilight">Twilight</option>
-                        <option value="solarized_dark">Solarized Dark</option>
-                        <option value="solarized_light">Solarized Light</option>
-                        <option value="terminal">Terminal</option>
-                    </select>
-                </div>
-                <div className={style.language}>
-                    <label htmlFor="language-select">Language: </label>
-                    <select value={language} onChange={(e) => setLanguage(e.target.value)} className={style.dropdown}>
-                        <option value="Python">Python</option>
-                        <option value="C">C</option>
-                        <option value="C++">C++</option>
-                        <option value="R">R</option>
-                        <option value="Ruby">Ruby</option>
-                        <option value="JavaScript">JavaScript</option>
-                    </select>
-                </div>
-                <div className={style.editorSetting}>
-                    <button><img src="https://img.icons8.com/?size=48&id=89139&format=png" alt="editor setting" /></button>
-                </div>
-            </div>
-            <div className={style.Editor}>
-                <AceEditor
-                    className={style.runEditor}
-                    mode={getMode()}
-                    theme={theme}
-                    onChange={setCode}
-                    name="UNIQUE_ID_OF_DIV"
-                    editorProps={{ $blockScrolling: true }}
-                    value={code}
-                    height="400px"
-                    width=""
-                />
-            </div>
-            <div className={style.run_opt}>
-                <div>
-                    <pre>Input</pre>
-                    <pre>Output: {output}</pre>
-                </div>
-                <div>
-                    <button onClick={handleRunCode}>Run Code</button>
-                    <button onClick={handleSubmitCode} style={{color:"white", backgroundColor:"green"}}>Submit</button>
+                    <div className={style.Editor}>
+                        <AceEditor
+                            className={style.runEditor}
+                            mode={getMode()}
+                            theme={theme}
+                            onChange={setCode}
+                            name="UNIQUE_ID_OF_DIV"
+                            editorProps={{ $blockScrolling: true }}
+                            value={code}
+                            height="400px"
+                            width=""
+                        />
+                    </div>
+                    <div className={style.run_opt}>
+                        <div>
+                            <label htmlFor="stdin">Input:</label>
+                            <textarea
+                                id="stdin"
+                                value={input}
+                                onChange={(e) => setInput(e.target.value)}
+                                style={{ width: '100%', height: '50px', border: "1px solid red" }}
+                            />
+                            <pre>Output: {output}</pre>
+                        </div>
+                        <div>
+                            <button onClick={handleRunCode} disabled={executing}>Run Code</button>
+                            <button onClick={handleSubmitCode} disabled={executing}>Submit Code</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    </>
-  )
-}
+        </>
+    );
+};
