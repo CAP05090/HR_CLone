@@ -31,6 +31,7 @@ export const ReverseString = () => {
     const [loading, setLoading] = useState(false);
     const [executing, setExecuting] = useState(false);
     const [title, setTitle] = useState('Reverse a String');
+    const [fontSize, setFontSize] = useState(14);
 
     // Fetch challenge data on component mount
     useEffect(() => {
@@ -135,6 +136,13 @@ export const ReverseString = () => {
                 </div>
                 <div className={style.Editor}>
                     <div className={style.themeLang}>
+                        <div>
+                            {/* Slider for font size */}
+                            <label htmlFor="font-size">Font Size:</label>
+                            <input type="range" id="font-size" min="10" max="24" step="1.5" value={fontSize}
+                                onChange={(e) => setFontSize(parseInt(e.target.value))}
+                            />
+                        </div>
                         <div className={style.theme}>
                             <label htmlFor="theme-select" style={{ color: "blue" }}>Theme: </label>
                             <select id="theme-select" value={theme} onChange={(e) => setTheme(e.target.value)} className={style.dropdown}>
@@ -162,11 +170,13 @@ export const ReverseString = () => {
                             <button><img src="https://img.icons8.com/?size=48&id=89139&format=png" alt="editor setting" /></button>
                         </div>
                     </div>
+                    {/* Ace Editor component */}
                     <div className={style.Editor}>
                         <AceEditor
                             className={style.runEditor}
                             mode={getMode()}
                             theme={theme}
+                            fontSize={fontSize}
                             onChange={setCode}
                             name="UNIQUE_ID_OF_DIV"
                             editorProps={{ $blockScrolling: true }}
