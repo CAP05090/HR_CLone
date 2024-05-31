@@ -24,7 +24,7 @@ import axios from 'axios';
 export const ReverseString = () => {
 
     const [code, setCode] = useState('# write code here ...');
-    const [language, setLanguage] = useState('Python');
+    const [language, setLanguage] = useState('python');
     const [input, setInput] = useState("");
     const [theme, setTheme] = useState('terminal');
     const [output, setOutput] = useState('');
@@ -46,7 +46,9 @@ export const ReverseString = () => {
                 const filteredChallenge = challenges.find(challenge => 
                     challenge.title.toLowerCase() === title.toLowerCase()
                 );
-
+                if (filteredChallenge && filteredChallenge.sampleInput) {
+                    setInput(filteredChallenge.sampleInput);
+                }
                 setData(filteredChallenge);
                 setLoading(false);
                 console.log(filteredChallenge);
@@ -92,15 +94,16 @@ export const ReverseString = () => {
             setExecuting(false);
         }
     };
-     // Determine the editor mode based on the selected language
-     const getMode = () => {
+
+    // Determine the editor mode based on the selected language
+    const getMode = () => {
         switch (language) {
-            case 'Python': return 'python';
-            case 'C':
-            case 'C++': return 'c_cpp';
-            case 'R': return 'r';
-            case 'Ruby': return 'ruby';
-            case 'JavaScript': return 'javascript';
+            case 'python': return 'python';
+            case 'c':
+            case 'c++': return 'c_cpp';
+            case 'r': return 'r';
+            case 'ruby': return 'ruby';
+            case 'javascript': return 'javascript';
             default: return 'text';
         }
     };
@@ -179,7 +182,7 @@ export const ReverseString = () => {
                             theme={theme}
                             fontSize={fontSize}
                             onChange={setCode}
-                            name="UNIQUE_ID_OF_DIV"
+                            name="UNIQUE_ID_OF_DIV" // Ensure this ID is unique in the page
                             editorProps={{ $blockScrolling: true }}
                             value={code}
                             height="400px"
@@ -193,7 +196,7 @@ export const ReverseString = () => {
                                 id="stdin"
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
-                                style={{ width: '100%', height: '50px', border: "1px solid red" }}
+                                style={{ width: '100%', height: '50px', border: "1px solid grey" }}
                             />
                             <pre>Output: {output}</pre>
                         </div>
