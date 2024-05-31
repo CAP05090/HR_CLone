@@ -15,7 +15,7 @@ export const Login = () => {
   const handleLogin = async(e)=>{
     e.preventDefault();
     try {
-      let res = await axios.post("http://localhost:8080/users/login", userData)
+      let res = await axios.post("hrclonebackend-production.up.railway.app/users/login", userData)
       let token = res.data.AccessToken
       if (token){
         setLogin(true)

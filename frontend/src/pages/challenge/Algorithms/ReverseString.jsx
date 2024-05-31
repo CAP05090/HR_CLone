@@ -39,7 +39,7 @@ export const ReverseString = () => {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get("http://localhost:8080/challenge");
+                const response = await axios.get("hrclonebackend-production.up.railway.app/challenge");
                 const challenges = response.data;
 
                 // Filter challenges by title and set the specific challenge to state

@@ -18,7 +18,7 @@ export const Signup = () => {
     }
     try {
       const userData = {name, email, password, education, stream}
-      let res = await axios.post("http://localhost:8080/users/register", userData)
+      let res = await axios.post("hrclonebackend-production.up.railway.app/users/register", userData)
       console.log(res.data)
       alert(res.data.msg)
       localStorage.setItem({"AccessToken": res.data.AccessToken})
