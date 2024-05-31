@@ -39,7 +39,7 @@ export const ReverseString = () => {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get("hrclonebackend-production.up.railway.app/challenge");
+                const response = await axios.get("https://hrclonebackend-production-26bd.up.railway.app/challenge");
                 const challenges = response.data;
 
                 // Filter challenges by title and set the specific challenge to state
@@ -64,7 +64,7 @@ export const ReverseString = () => {
     const handleRunCode = async () => {
         setExecuting(true);
         try {
-            const result = await axios.post('http://localhost:8080/challenges/run', { code, language, stdin: input });
+            const result = await axios.post('https://hrclonebackend-production-26bd.up.railway.app/challenges/run', { code, language, stdin: input });
             setOutput(result.data.output || result.data.error);
         } catch (error) {
             setOutput(`Error: ${error.message}`);
@@ -77,7 +77,7 @@ export const ReverseString = () => {
     const handleSubmitCode = async () => {
         setExecuting(true);
         try {
-            const result = await axios.post('http://localhost:8080/challenges/submit', {
+            const result = await axios.post('https://hrclonebackend-production-26bd.up.railway.app/challenges/submit', {
                 code,
                 language,
                 challengeId: data?._id // assuming each challenge has a unique identifier
