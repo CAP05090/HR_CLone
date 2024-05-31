@@ -8,6 +8,7 @@ import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-c_cpp";
 import "ace-builds/src-noconflict/mode-r";
 import "ace-builds/src-noconflict/mode-ruby";
+import "ace-builds/src-noconflict/mode-text";
 
 // Import themes
 import "ace-builds/src-noconflict/theme-github";
@@ -22,7 +23,7 @@ import axios from 'axios';
 
 export const ReverseString = () => {
 
-    const [code, setCode] = useState('// write code here ...');
+    const [code, setCode] = useState('# write code here ...');
     const [language, setLanguage] = useState('Python');
     const [input, setInput] = useState("");
     const [theme, setTheme] = useState('terminal');
@@ -160,7 +161,7 @@ export const ReverseString = () => {
                             <select value={language} onChange={(e) => setLanguage(e.target.value)} className={style.dropdown}>
                                 <option value="python">Python</option>
                                 <option value="c">C</option>
-                                <option value="c_pp">C++</option>
+                                <option value="c++">C++</option>
                                 <option value="r">R</option>
                                 <option value="ruby">Ruby</option>
                                 <option value="javascript">JavaScript</option>
@@ -198,7 +199,7 @@ export const ReverseString = () => {
                         </div>
                         <div>
                             <button onClick={handleRunCode} disabled={executing}>Run Code</button>
-                            <button onClick={handleSubmitCode} disabled={executing}>Submit Code</button>
+                            <button onClick={handleSubmitCode} disabled={executing}>Submit</button>
                         </div>
                     </div>
                 </div>
