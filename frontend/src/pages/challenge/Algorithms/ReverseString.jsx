@@ -33,23 +33,26 @@ export const ReverseString = () => {
     const [executing, setExecuting] = useState(false);
     const [title, setTitle] = useState('Reverse a String');
     const [fontSize, setFontSize] = useState(14);
+    const [testCase, setTestCase] = useState("")
 
     // Fetch challenge data on component mount
     useEffect(() => {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get("hrclonebackend-production.up.railway.app/challenge");
+                const response = await axios.get("http://localhost:8080/challenge");
                 const challenges = response.data;
 
                 // Filter challenges by title and set the specific challenge to state
                 const filteredChallenge = challenges.find(challenge => 
                     challenge.title.toLowerCase() === title.toLowerCase()
                 );
-                if (filteredChallenge && filteredChallenge.sampleInput) {
-                    setInput(filteredChallenge.sampleInput);
+                if (filteredChallenge) {
+                    setInput(filteredChallenge.sampleInput || "");
+                    setData(filteredChallenge);
+                } else {
+                    setCode(null)
                 }
-                setData(filteredChallenge);
                 setLoading(false);
                 console.log(filteredChallenge);
             } catch (error) {
@@ -83,6 +86,7 @@ export const ReverseString = () => {
                 challengeId: data?._id // assuming each challenge has a unique identifier
             });
             console.log(result.data);
+            setTestCase(result.data)
             if (result.data.success) {
                 alert('Problem submitted successfully and passed all test cases!');
             } else {
@@ -206,6 +210,21 @@ export const ReverseString = () => {
                         </div>
                     </div>
                 </div>
+                <div> {testCase.success ? 
+                    (testCase && (
+                    <ul >
+                        <li style={{color:"green"}}>{testCase.message}</li>
+                        <li>Output: {testCase.output.join(", ")}</li>
+                        <li>Expected Output: {testCase.expected.join(", ")}</li>
+                    </ul>
+                )): (testCase && (
+                    <ul>
+                        <li style={{color: "red"}}>{testCase.message}</li>
+                        <li>Output: {testCase.output.join(", ")}</li>
+                        <li>Expected Output: {testCase.expected.join(", ")}</li>
+                    </ul>
+                ))
+                } </div>
             </div>
         </>
     );
