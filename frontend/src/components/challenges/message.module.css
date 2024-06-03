@@ -1,0 +1,26 @@
+.modal {
+    display: block; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding: 10px 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 70%; /* Full width */
+    overflow: auto; /* Enable scroll if needed */
+    margin: auto;
+    background-color: grey;
+  }
+.modal>ul{
+  padding: 20px;
+}
+.modal>ul>li{
+  margin: 10px 20px;
+  list-style: none;
+}
+.modal>ul>h1{
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  margin: 10px auto;
+  font-weight: 500;
+}
