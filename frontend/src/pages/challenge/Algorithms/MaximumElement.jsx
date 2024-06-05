@@ -4,11 +4,7 @@ import axios from 'axios';
 import { CodeEditor } from '../../../components/challenges/CodeEditor';
 
 export const MaximumElement = () => {
-    const testcases = [
-        {input:[1, 2, 4, 7, 8], output: 8},
-        {input:[3, 4, 5, 9, 22, 12], output: 22}
-    ]
-    // const [sampleTest, setSampleTest] = useState()
+
     const [input, setInput] = useState("");
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -33,7 +29,7 @@ export const MaximumElement = () => {
                     setData(null);
                 }
                 setLoading(false);
-                console.log(filteredChallenge);
+                // console.log(filteredChallenge);
             } catch (error) {
                 console.log(error.message);
                 setLoading(false);
@@ -41,6 +37,11 @@ export const MaximumElement = () => {
         };
         fetchData();
     }, [title]);
+
+    const Test = [
+        {input:[1, 2, 4, 7, 8], output: 8},
+        {input:[3, 4, 5, 9, 22, 12], output: 22}
+    ]
 
     return (
         <>
@@ -72,7 +73,7 @@ export const MaximumElement = () => {
                         </div>
                     )}
                 </div>
-                <CodeEditor challengeData={data} testcase={testcases} />
+                <CodeEditor challengeData={data} TestCases={Test} />
             </div>
         </>
     );

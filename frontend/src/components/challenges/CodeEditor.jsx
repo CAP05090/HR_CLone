@@ -66,7 +66,7 @@ export const CodeEditor = ({ challengeData, TestCases }) => {
         testCases: TestCases,
         challengeId: challengeData?._id // assuming each challenge has a unique identifier
       });
-      console.log(result.data)
+      // console.log(result.data)
       setTestCase(result.data);
       if (result.data.success) {
         console.log('Problem submitted successfully and passed all test cases!');

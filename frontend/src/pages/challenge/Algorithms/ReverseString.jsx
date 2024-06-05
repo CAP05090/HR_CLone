@@ -28,7 +28,7 @@ export const ReverseString = () => {
                     setData(null);
                 }
                 setLoading(false);
-                console.log(filteredChallenge);
+                // console.log(filteredChallenge);
             } catch (error) {
                 console.log(error.message);
                 setLoading(false);

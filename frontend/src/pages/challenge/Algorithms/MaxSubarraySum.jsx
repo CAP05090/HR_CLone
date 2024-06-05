@@ -28,7 +28,7 @@ export const MaxSubarraySum = () => {
                     setData(null);
                 }
                 setLoading(false);
-                console.log(filteredChallenge);
+                //console.log(filteredChallenge);
             } catch (error) {
                 console.log(error.message);
                 setLoading(false);
@@ -36,6 +36,11 @@ export const MaxSubarraySum = () => {
         };
         fetchData();
     }, [title]);
+
+    const TestCases = [
+        {input:[], output:6},
+        {input:[], output:12}
+      ]
 
     return (
         <>
