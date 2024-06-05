@@ -3,11 +3,11 @@ import style from "./challenge.module.css";
 import axios from 'axios';
 import { CodeEditor } from '../../../components/challenges/CodeEditor';
 
-export const ReverseString = () => {
+export const MaxSubarraySum = () => {
     const [input, setInput] = useState("");
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [title, setTitle] = useState('Reverse a String');
+    const [title, setTitle] = useState('Maximum Subarray Sum');
     
     // Fetch challenge data on component mount
     useEffect(() => {
@@ -36,11 +36,6 @@ export const ReverseString = () => {
         };
         fetchData();
     }, [title]);
-
-    const TestCases = [
-        {input:"home", output:"emoh"},
-        {input:"asdf", output:"fdsa"}
-      ]
 
     return (
         <>
@@ -72,7 +67,7 @@ export const ReverseString = () => {
                         </div>
                     )}
                 </div>
-                <CodeEditor challengeData={data} TestCases = {TestCases} />
+                <CodeEditor challengeData={data} />
             </div>
         </>
     );

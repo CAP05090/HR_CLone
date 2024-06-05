@@ -21,7 +21,7 @@ import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/theme-solarized_light";
 import "ace-builds/src-noconflict/theme-terminal";
 
-export const CodeEditor = ({ challengeData }) => {
+export const CodeEditor = ({ challengeData, TestCases }) => {
   const [code, setCode] = useState('# write code here ...');
   const [language, setLanguage] = useState('python');
   const [input, setInput] = useState("");
@@ -30,12 +30,16 @@ export const CodeEditor = ({ challengeData }) => {
   const [executing, setExecuting] = useState(false);
   const [fontSize, setFontSize] = useState(14);
   const [testCase, setTestCase] = useState(null);
-  const [showModal, setShowModal] = useState(false); // State to control modal visibility
-
+  
   useEffect(() => {
     if (challengeData) {
       setCode(challengeData.initialCode || '# write code here ...');
-      setInput(challengeData.sampleInput || "");
+      if (challengeData.sampleInput) {
+        const cleanedInput = challengeData.sampleInput.map(input => input.trim()).join(" ");
+        setInput(cleanedInput);
+      } else {
+        setInput("");
+      }
     }
   }, [challengeData]);
 
@@ -59,8 +63,10 @@ export const CodeEditor = ({ challengeData }) => {
       const result = await axios.post('http://localhost:8080/challenges/submit', {
         code,
         language,
+        testCases: TestCases,
         challengeId: challengeData?._id // assuming each challenge has a unique identifier
       });
+      console.log(result.data)
       setTestCase(result.data);
       if (result.data.success) {
         console.log('Problem submitted successfully and passed all test cases!');
@@ -89,9 +95,6 @@ export const CodeEditor = ({ challengeData }) => {
 
   return (
     <div className={style.Editor}>
-      <div>
-        
-      </div>
       <div className={style.themeLang}>
         <div>
           {/* Slider for font size */}

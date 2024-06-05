@@ -3,11 +3,16 @@ import style from "./challenge.module.css";
 import axios from 'axios';
 import { CodeEditor } from '../../../components/challenges/CodeEditor';
 
-export const ReverseString = () => {
+export const MaximumElement = () => {
+    const testcases = [
+        {input:[1, 2, 4, 7, 8], output: 8},
+        {input:[3, 4, 5, 9, 22, 12], output: 22}
+    ]
+    // const [sampleTest, setSampleTest] = useState()
     const [input, setInput] = useState("");
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [title, setTitle] = useState('Reverse a String');
+    const [title, setTitle] = useState('Find the maximum element in an array');
     
     // Fetch challenge data on component mount
     useEffect(() => {
@@ -36,11 +41,6 @@ export const ReverseString = () => {
         };
         fetchData();
     }, [title]);
-
-    const TestCases = [
-        {input:"home", output:"emoh"},
-        {input:"asdf", output:"fdsa"}
-      ]
 
     return (
         <>
@@ -72,7 +72,7 @@ export const ReverseString = () => {
                         </div>
                     )}
                 </div>
-                <CodeEditor challengeData={data} TestCases = {TestCases} />
+                <CodeEditor challengeData={data} testcase={testcases} />
             </div>
         </>
     );

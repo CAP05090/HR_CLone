@@ -8,7 +8,7 @@ const PopMessage = ({ testCase }) => {
       <ul>
         <h1 style={{ backgroundColor:"green"}}>{testCase.message}</h1>
         <p>Got Output:</p>
-        <li>{testCase.output?.join(", ")}</li>
+        <li>{testCase.got?.join(", ")}</li>
         <p>Expected Output: </p>
         <li>{testCase.expected?.join(", ")}</li>
       </ul>
@@ -16,7 +16,7 @@ const PopMessage = ({ testCase }) => {
       <ul>
         <h1 style={{backgroundColor:"red"}}>{testCase.message}</h1>
         <p>Got Output:</p>
-        <li>{testCase.output?.join(", ")}</li>
+        <li>{testCase.got?.join(", ")}</li>
         <p>Expected Output: </p>
         <li>{testCase.expected?.join(", ")}</li>
       </ul>
