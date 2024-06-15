@@ -34,9 +34,18 @@ export const CodeEditor = ({ challengeData, TestCases }) => {
   useEffect(() => {
     if (challengeData) {
       setCode(challengeData.initialCode || '# write code here ...');
+  
       if (challengeData.sampleInput) {
-        const cleanedInput = challengeData.sampleInput.map(input => input.trim()).join(" ");
-        setInput(cleanedInput);
+        if (Array.isArray(challengeData.sampleInput) && challengeData.sampleInput.length > 1) {
+          const cleanedInput = challengeData.sampleInput.map(input => input.join(" "));
+          // console.log(cleanedInput);
+          setInput(cleanedInput);
+        } else {
+          // Handling the case when sampleInput is a single string or an array with a single element
+          const cleanedInput = challengeData.sampleInput[0] ? challengeData.sampleInput[0].trim() : "";
+          // console.log(cleanedInput);
+          setInput(cleanedInput);
+        }
       } else {
         setInput("");
       }

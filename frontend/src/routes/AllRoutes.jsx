@@ -13,6 +13,7 @@ import { DomainRoute } from './DomainRoute'
 import { ChallengeRoute } from './challengeRoute'
 import { ContestRoute } from './ContestRoute'
 import { UserRoute } from './UserRoute'
+import { SkillsRoute } from './SkillsRoute'
 
 export const AllRoutes = () => {
   return (
@@ -32,6 +33,7 @@ export const AllRoutes = () => {
         <ChallengeRoute />
         <ContestRoute />
         <UserRoute />
+        <SkillsRoute />
     </BrowserRouter>
   )
 }

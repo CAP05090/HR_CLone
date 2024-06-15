@@ -1,0 +1,30 @@
+.logo{
+    background-color: black;
+    height: 50px;
+}
+.logolnk{
+    height: 20px;
+
+}
+.logo>.logolnk>img{
+    margin: auto;
+    width: 200px;
+    display: block;
+}
+.skill_path{
+    background-color: rgb(77, 77, 77);
+    display: flex;
+    padding: 10px;
+}
+.skillnk{
+    color: white;
+}
+.skill_path>img{
+    width: 15px;
+    height: 15px;
+    display: block;
+    margin: auto 10px;
+}
+.skill_path>p{
+    color: rgb(143, 143, 143);
+}

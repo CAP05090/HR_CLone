@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import style from "./challenge.module.css";
+import {Link} from "react-router-dom"
 import axios from 'axios';
 import { CodeEditor } from '../../../components/challenges/CodeEditor';
+import { Footer } from '../../../components/dashboard/Footer/Footer';
+import { Navbar } from '../../../components/dashboard/Navbar/Navbar';
 
 export const ReverseString = () => {
     const [input, setInput] = useState("");
@@ -44,6 +47,13 @@ export const ReverseString = () => {
 
     return (
         <>
+        <Navbar />
+        {data && ( <div>
+            {["problem", "submission", "leaderboard", "editorial"].map((linkType) => (
+            <Link key={linkType} to={`/challenges/${data.title.toLowerCase().split(" ").join("-")}/${linkType}`}>
+                {linkType.charAt(0).toUpperCase() + linkType.slice(1)}
+            </Link>))}
+        </div>)}
             <div className={style.challenge}>
                 <div className={style.question}>
                     {loading && <h1>Loading...</h1>}
@@ -74,6 +84,7 @@ export const ReverseString = () => {
                 </div>
                 <CodeEditor challengeData={data} TestCases = {TestCases} />
             </div>
+        <Footer />
         </>
     );
 };

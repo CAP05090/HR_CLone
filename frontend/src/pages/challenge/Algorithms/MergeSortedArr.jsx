@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import {Link} from "react-router-dom"
 import style from "./challenge.module.css";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { CodeEditor } from '../../../components/challenges/CodeEditor';
 import { Footer } from '../../../components/dashboard/Footer/Footer';
 import { Navbar } from '../../../components/dashboard/Navbar/Navbar';
 
-export const MaximumElement = () => {
-
+export const MergeSortedArr = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [title, setTitle] = useState('Find the maximum element in an array');
+    const [title, setTitle] = useState('Merge Two Sorted Arrays');
     
     // Fetch challenge data on component mount
     useEffect(() => {
@@ -30,7 +29,7 @@ export const MaximumElement = () => {
                     setData(null);
                 }
                 setLoading(false);
-                // console.log(filteredChallenge);
+                console.log(filteredChallenge);
             } catch (error) {
                 console.log(error.message);
                 setLoading(false);
@@ -39,10 +38,10 @@ export const MaximumElement = () => {
         fetchData();
     }, [title]);
 
-    const Test = [
-        {input:[1, 2, 4, 7, 8], output: 8},
-        {input:[3, 4, 5, 9, 22, 12], output: 22}
-    ]
+    const TestCases = [
+        {input:[[1, 2, 3], [4, 5, 6]], output:[1, 2, 3, 4, 5, 6]},
+        {input:[5,6,7,9,3,4,2,12,4,8,0], output:12}
+      ]
 
     return (
         <>
@@ -81,7 +80,7 @@ export const MaximumElement = () => {
                         </div>
                     )}
                 </div>
-                <CodeEditor challengeData={data} TestCases={Test} />
+                <CodeEditor challengeData={data} testCase={TestCases} />
             </div>
             <Footer />
         </>

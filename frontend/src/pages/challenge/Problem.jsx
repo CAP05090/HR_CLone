@@ -1,14 +1,29 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from "axios"
 import { Navbar } from '../../components/challenges/navbar/Navbar'
+import { CodeEditor } from '../../components/challenges/CodeEditor'
 
 export const Problem = async() => {
-    const question = await axios.get("http://localhost:8080/challenge")
+  const [data, setData] = useState("")
+  const [loading, setLoading] = useState("")
     
-    console.log(question.data)
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get("http://localhost:8080/challenge");
+        const challenges = response.data;
+        setLoading(false);
+        console.log(challenges);
+      } catch (error) {
+        console.log(error.message);
+        setLoading(false);
+      }
+    };
+    fetchData();
+}, []);
   return (
     <>
-    <h1>Challange Page</h1>
     <Navbar />
     </>
   )

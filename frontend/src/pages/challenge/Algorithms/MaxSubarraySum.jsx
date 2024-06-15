@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import style from "./challenge.module.css";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { CodeEditor } from '../../../components/challenges/CodeEditor';
+import { Footer } from '../../../components/dashboard/Footer/Footer';
+import { Navbar } from '../../../components/dashboard/Navbar/Navbar';
 
 export const MaxSubarraySum = () => {
-    const [input, setInput] = useState("");
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [title, setTitle] = useState('Maximum Subarray Sum');
@@ -22,7 +24,6 @@ export const MaxSubarraySum = () => {
                     challenge.title.toLowerCase() === title.toLowerCase()
                 );
                 if (filteredChallenge) {
-                    setInput(filteredChallenge.sampleInput || "");
                     setData(filteredChallenge);
                 } else {
                     setData(null);
@@ -38,12 +39,19 @@ export const MaxSubarraySum = () => {
     }, [title]);
 
     const TestCases = [
-        {input:[], output:6},
-        {input:[], output:12}
+        {input:[1,2,3,6,4,3], output:6},
+        {input:[5,6,7,9,3,4,2,12,4,8,0], output:12}
       ]
 
     return (
         <>
+        <Navbar />
+        {data && ( <div>
+            {["problem", "submission", "leaderboard", "editorial"].map((linkType) => (
+            <Link key={linkType} to={`/challenges/${data.title.toLowerCase().split(" ").join("-")}/${linkType}`}>
+                {linkType.charAt(0).toUpperCase() + linkType.slice(1)}
+            </Link>))}
+        </div>)}
             <div className={style.challenge}>
                 <div className={style.question}>
                     {loading && <h1>Loading...</h1>}
@@ -72,8 +80,9 @@ export const MaxSubarraySum = () => {
                         </div>
                     )}
                 </div>
-                <CodeEditor challengeData={data} />
+                <CodeEditor challengeData={data} testCase={TestCases} />
             </div>
+            <Footer />
         </>
     );
 };
